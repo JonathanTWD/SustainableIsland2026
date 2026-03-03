@@ -12,7 +12,8 @@ export const Routing = () => {
             <BrowserRouter>
                 <Routes>
                     <Route element={<div>Shared Layout</div>}>
-
+                    
+        
                         <Route index element={<HomePage />} />
                         <Route path="/Profile" element={<ProfilePage />} />
                         <Route path="/Calculator" element={<CalculatorPage />} />
