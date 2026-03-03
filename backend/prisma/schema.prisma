@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model WaterReference {
+  id                     Int      @id @default(autoincrement())
+  household_members      Int?
+  /// Average daily benchmark consumption
+  average_liters_per_day Decimal? @db.Decimal(10, 2)
+
+  @@map("water_reference")
+}

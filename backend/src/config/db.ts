@@ -1,18 +1,24 @@
-import { Pool } from "pg";
+import "dotenv/config";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "@prisma/client";
 
-export const pool = new Pool({
-    host: process.env.PGHOST,
-    port: Number(process.env.PGPORT),
-    user: process.env.PGUSER,
-    password: process.env.PGPASSWORD,
-    database: process.env.PGDATABASE,
-});
+const connectionString = process.env.DATABASE_URL;
 
-pool.on("error", (error: Error) => {
-    console.error("Unexpected PostgreSQL pool error", error);
-});
+if (!connectionString) {
+    throw new Error("DATABASE_URL is required");
+}
+
+const adapter = new PrismaPg({ connectionString });
+
+export const prisma = new PrismaClient({ adapter });
 
 export async function checkDatabaseConnection() {
-    const result = await pool.query("SELECT NOW() AS now");
-    return result.rows[0];
+    const result = await prisma.$queryRaw<Array<{ now: Date }>>`SELECT NOW() AS now`;
+    const row = result[0];
+
+    if (!row) {
+        throw new Error("Database check query returned no rows");
+    }
+
+    return row;
 }
