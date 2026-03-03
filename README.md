@@ -11,6 +11,7 @@
 2. Ensure environment variables are set in `.env` (example in `.env.example`):
 
 	- `PORT=3000`
+	- `DATABASE_URL=postgresql://postgres:password@localhost:5432/sustainable_island?schema=public`
 	- `PGHOST=localhost`
 	- `PGPORT=5432`
 	- `PGUSER=postgres`
@@ -38,3 +39,6 @@
 - `npm run db:up` → starts PostgreSQL
 - `npm run db:down` → stops PostgreSQL
 - `npm run db:logs` → real-time logs
+- `npm run prisma:generate` → generates Prisma Client
+- `npm run prisma:migrate -- --name init` → creates/applies a migration
+- `npm run prisma:studio` → opens Prisma Studio
