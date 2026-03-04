@@ -1,11 +1,8 @@
 import { Request, Response } from "express";
 import { Prisma } from "@prisma/client";
 import { prisma } from "../config/db";
-import bcrypt from "bcrypt";
 import { CreateUserDTO, UpdateUserDTO, User, UserResponse } from "../interfaces/user.interface";
-
-
-const SALT_ROUNDS = 10;
+import { hashPassword } from "../utils/password.util";
 
 const excludePassword = (user: User): UserResponse => {
   const { password_hash, ...userWithoutPassword } = user;
@@ -86,7 +83,7 @@ export const createUser = async (req: Request, res: Response) => {
       return res.status(409).json({ error: "Email is already registered" });
     }
 
-    const password_hash = await bcrypt.hash(password, SALT_ROUNDS);
+    const password_hash = await hashPassword(password);
 
     const newUser = await prisma.users.create({
       data: {
@@ -145,7 +142,7 @@ export const updateUser = async (req: Request, res: Response) => {
           .status(400)
           .json({ error: "Password must be at least 6 characters" });
       }
-      updateData.password_hash = await bcrypt.hash(password, SALT_ROUNDS);
+      updateData.password_hash = await hashPassword(password);
     }
 
     // Update user
