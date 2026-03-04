@@ -3,19 +3,11 @@ import { Prisma } from "@prisma/client";
 import { prisma } from "../config/db";
 import { CreateUserDTO, UpdateUserDTO, User, UserResponse } from "../interfaces/user.interface";
 import { hashPassword } from "../utils/password.util";
+import { parseIdParam } from "../utils/id.util";
 
 const excludePassword = (user: User): UserResponse => {
   const { password_hash, ...userWithoutPassword } = user;
   return userWithoutPassword;
-};
-
-const parseIdParam = (idParam: string | string[] | undefined): number | null => {
-  if (typeof idParam !== "string") {
-    return null;
-  }
-
-  const parsedId = Number.parseInt(idParam, 10);
-  return Number.isNaN(parsedId) ? null : parsedId;
 };
 
 // GET /api/users
@@ -62,7 +54,6 @@ export const createUser = async (req: Request, res: Response) => {
   try {
     const { name, email, password }: CreateUserDTO = req.body;
 
-    // Validations
     if (!email || !password) {
       return res
         .status(400)
@@ -145,7 +136,6 @@ export const updateUser = async (req: Request, res: Response) => {
       updateData.password_hash = await hashPassword(password);
     }
 
-    // Update user
     const updatedUser = await prisma.users.update({
       where: { id: userId },
       data: updateData,
@@ -158,7 +148,7 @@ export const updateUser = async (req: Request, res: Response) => {
   }
 };
 
-// DELETE /api/users/:id - Delete a user
+// DELETE /api/users/:id
 export const deleteUser = async (req: Request, res: Response) => {
   try {
     const userId = parseIdParam(req.params.id);

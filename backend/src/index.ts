@@ -2,6 +2,7 @@ import "dotenv/config";
 import express, { Request, Response } from "express";
 import { checkDatabaseConnection } from "./config/db";
 import userRoutes from "./routes/user.routes";
+import waterCalculationRoutes from "./routes/water-calculation.routes";
 
 const app = express();
 const PORT = Number(process.env.PORT);
@@ -26,6 +27,7 @@ app.get("/health/db", async (_req: Request, res: Response) => {
 
 // API Routes
 app.use("/api/users", userRoutes);
+app.use("/api/water-calculations", waterCalculationRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
