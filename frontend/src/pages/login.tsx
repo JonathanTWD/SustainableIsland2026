@@ -1,3 +1,4 @@
+import InputField from "../components/InputField";
 import ToggleSwitch from "../components/ToggleSwitch";
 
 
@@ -11,16 +12,8 @@ const login = () => {
             </h1>
             {/* Input fields */}
             <div className="flex flex-col gap-6">
-                <input 
-                    type="text" 
-                    placeholder="Email"
-                    className="border-2 border-[#0A302F] font-nunito text-2xl placeholder-[#0A302F] rounded-2xl px-4 py-3 focus:none"
-                />
-                <input 
-                    type="password" 
-                    placeholder="Password" 
-                    className="border-2 border-[#0A302F] font-nunito text-2xl placeholder-[#0A302F] rounded-2xl px-4 py-3 focus:none"
-                />
+                <InputField type="text" placeholder="Email" />
+                <InputField type="password" placeholder="Password" />
             </div >
             {/* Buttons */}
             <div className="flex-col gap-2.5">
