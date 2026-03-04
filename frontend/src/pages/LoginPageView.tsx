@@ -1,7 +1,7 @@
 import ToggleSwitch from "../components/ToggleSwitch";
 
 
-const login = () => {
+const LoginPage = () => {
     return (
         <>
         <div className="px-6 py-15 flex flex-col gap-12">
@@ -49,4 +49,4 @@ const login = () => {
         </>
     );
 };
-export default login;
+export default LoginPage;
