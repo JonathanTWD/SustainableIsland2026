@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 
 interface WaterSliderProps {
     value: number;
@@ -11,8 +11,6 @@ interface WaterSliderProps {
 }
 
 export const Slider = (props: WaterSliderProps) => {
-    const [waterValue, setWaterValue] = useState(props.value);
-
     return (
         <>
             <p>{props.title}</p>
@@ -20,15 +18,11 @@ export const Slider = (props: WaterSliderProps) => {
                 type="range"
                 min={props.min}
                 max={props.max}
-                value={waterValue}
-                onChange={(e) => {
-                    const newValue = Number(e.target.value);
-                    setWaterValue(newValue);
-                    props.onChange(newValue);
-                }}
+                value={props.value}
+                onChange={(e) => props.onChange(Number(e.target.value))}
                 className="slider"
             />
-            <p>{props.subText}: {waterValue}</p>
+            <p>{props.subText}: {props.value}</p>
         </>
     );
 }
