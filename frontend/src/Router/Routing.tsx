@@ -4,6 +4,7 @@ import { ProfilePage } from "../pages/ProfilePageView";
 import { CalculatorPage } from "../pages/CalculatorPageView";
 import { InformationPage } from "../pages/InformationPageView";
 import LoginPage from "../pages/LoginPageView";
+import SignupPage from "../pages/SignUpPageView";
 
 const Layout = () => {
   return (
@@ -24,6 +25,7 @@ export const Routing = () => {
           <Route path="calculator" element={<CalculatorPage />} />
           <Route path="information" element={<InformationPage />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="signup" element={<SignupPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
