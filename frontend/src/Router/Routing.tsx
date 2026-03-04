@@ -10,7 +10,6 @@ const Layout = () => {
     <div>
       <div>Shared Layout</div>
       <Outlet />
-      <CalculatorPage />
     </div>
   );
 };
