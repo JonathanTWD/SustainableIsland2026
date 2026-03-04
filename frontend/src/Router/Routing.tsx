@@ -10,6 +10,7 @@ export const Routing = () => {
 
         <>
             <BrowserRouter>
+            <CalculatorPage />
                 <Routes>
                     <Route element={<div>Shared Layout</div>}>
                     
