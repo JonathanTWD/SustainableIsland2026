@@ -1,13 +1,7 @@
-import Login from './log-in/login'
-import './index.css';
+import { Routing } from "./Router/Routing";
 
-function App() {
+const App = () => {
+  return <Routing />;
+};
 
-  return (
-    <>
-      <Login />
-    </>
-  )
-}
-
-export default App
+export default App;
