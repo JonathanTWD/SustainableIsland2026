@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-kalam: 'Kalam', cursive;
+  --font-nunito: 'Nunito', sans-serif;
+}
