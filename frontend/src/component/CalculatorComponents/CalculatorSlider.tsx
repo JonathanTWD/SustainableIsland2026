@@ -1,3 +1,5 @@
+
+
 interface WaterSliderProps {
     value: number;
     onChange: (value: number) => void;
@@ -31,5 +33,9 @@ export const Slider = (props: WaterSliderProps) => {
                 {props.subText}: <span className="font-semibold text-gray-900">{props.value}</span>
             </p>
         </div>
+                className="slider"
+            />
+            <p>{props.subText}: {props.value}</p>
+        </>
     );
 };
