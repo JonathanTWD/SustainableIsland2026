@@ -1,4 +1,4 @@
-import WaterDrop from '../../assets/img/Vector.svg'
+import WaterDrop from '../../assets/img/Vector.svg';
 
 interface WaterDropLogoProps {
     title?: string;
@@ -16,13 +16,7 @@ export const WaterDropLogo = (props: WaterDropLogoProps) => {
                     <p className="text-sm text-slate-600">{props.Subtext}</p>
                 </div>
                 <img src={WaterDrop} alt="Water Drop Logo" className="h-14 w-14 shrink-0" />
-        <>
-            <div>
-                <h1>{props.title || "Total:"}</h1>
-                <p>{props.value}</p>
-                <p>{props.Subtext}</p>
-                <img src={WaterDrop} alt="Water Drop Logo" />
             </div>
         </div>
-    )
-}
+    );
+};
