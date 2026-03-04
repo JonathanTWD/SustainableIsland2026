@@ -1,4 +1,5 @@
 import { prisma } from "../src/config/db";
+import bcrypt from "bcrypt";
 
 async function main() {
 	await prisma.waterCalculations.deleteMany();
@@ -6,22 +7,24 @@ async function main() {
 	await prisma.users.deleteMany();
 	await prisma.waterReference.deleteMany();
 
+	const saltRounds = 10;
+
 	await prisma.users.createMany({
 		data: [
 			{
 				name: "Ana Torres",
 				email: "ana.torres@example.com",
-				password_hash: "$2b$10$demoHashForAna12345678901234567890123456789012345",
+				password_hash: await bcrypt.hash("password123", saltRounds),
 			},
 			{
 				name: "Luis Gómez",
 				email: "luis.gomez@example.com",
-				password_hash: "$2b$10$demoHashForLuis1234567890123456789012345678901234",
+				password_hash: await bcrypt.hash("password123", saltRounds),
 			},
 			{
 				name: "Carla Ruiz",
 				email: "carla.ruiz@example.com",
-				password_hash: "$2b$10$demoHashForCarla123456789012345678901234567890123",
+				password_hash: await bcrypt.hash("password123", saltRounds),
 			},
 		],
 	});
