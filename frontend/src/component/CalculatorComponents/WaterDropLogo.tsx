@@ -12,7 +12,7 @@ export const WaterDropLogo = (props: WaterDropLogoProps) => {
         <>
             <div>
                 <h1>{props.title || "Total:"}</h1>
-                <p>{props.value || 0}</p>
+                <p>{props.value}</p>
                 <p>{props.Subtext}</p>
                 <img src={WaterDrop} alt="Water Drop Logo" />
             </div>
