@@ -1,14 +1,7 @@
-import { useState } from 'react'
-import Login from './pages/login'
-import './index.css';
+import { Routing } from "./Router/Routing";
 
-function App() {
+const App = () => {
+  return <Routing />;
+};
 
-  return (
-    <>
-      <Login />
-    </>
-  )
-}
-
-export default App
+export default App;
