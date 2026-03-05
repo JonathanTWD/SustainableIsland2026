@@ -1,22 +1,7 @@
-import { Button } from './Componentsv1/Button/Button'
-import { Header } from './Componentsv1/Header/Header'
-import { Nav } from './Componentsv1/Nav/Nav'
-import { Slider } from './Componentsv1/Slider/Slider'
+import { Routing } from "./Router/Routing";
 
-function App() {
+const App = () => {
+  return <Routing />;
+};
 
-	return (
-		<>
-			<Header />
-
-			<Button text="Log in" onClick={() => alert('You are now logged in!')} />
-			<Button text="Sign up" onClick={() => alert('You are now signed up!')} />
-
-			<Slider />
-
-			<Nav />
-		</>
-	)
-}
-
-export default App
+export default App;
