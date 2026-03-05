@@ -1,8 +1,4 @@
-type WaterItem = {
-    name: string;
-    value: number;
-    fill: string;
-};
+import type { WaterItem } from '../../types/WaterItem';
 
 type Props = {
     data: WaterItem[];
