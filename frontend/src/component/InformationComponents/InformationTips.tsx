@@ -26,7 +26,7 @@ const pickRandomTips = (tips: Tip[], count: number) => {
 };
 
 export const InformationTips = () => {
-    const tipsToShow = useMemo(() => pickRandomTips(WATER_TIPS, 7), []);
+    const tipsToShow = useMemo(() => pickRandomTips(WATER_TIPS, 8), []);
 
     return (
         <section>
