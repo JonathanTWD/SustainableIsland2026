@@ -3,6 +3,7 @@ import express, { Request, Response } from "express";
 import { checkDatabaseConnection } from "./config/db";
 import userRoutes from "./routes/user.routes";
 import waterCalculationRoutes from "./routes/water-calculation.routes";
+import metricsRoutes from "./routes/metrics.routes";
 import savingGoalRoutes from "./routes/saving-goal.routes";
 
 const app = express();
@@ -30,6 +31,7 @@ app.get("/health/db", async (_req: Request, res: Response) => {
 app.use("/api/users", userRoutes);
 app.use("/api/water-calculations", waterCalculationRoutes);
 app.use("/api/saving-goals", savingGoalRoutes);
+app.use("/api/metrics", metricsRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);

@@ -11,17 +11,14 @@ const excludePassword = (user: User): UserResponse => {
 };
 
 // GET /api/users
-export const getAllUsers = async (req: Request, res: Response) => {
+// Returns only the total number of users in the application
+export const getAllUsers = async (_req: Request, res: Response) => {
   try {
-    const users = await prisma.users.findMany({
-      orderBy: { created_at: "desc" },
-    });
-
-    const usersResponse = users.map(excludePassword);
-    res.json(usersResponse);
+    const count = await prisma.users.count();
+    res.json({ count });
   } catch (error) {
-    console.error("Error fetching users:", error);
-    res.status(500).json({ error: "Error fetching users" });
+    console.error("Error fetching user count:", error);
+    res.status(500).json({ error: "Error fetching user count" });
   }
 };
 
