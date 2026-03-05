@@ -1,3 +1,5 @@
+import { Request } from "express";
+
 export interface LoginDTO {
   email: string
   password: string
