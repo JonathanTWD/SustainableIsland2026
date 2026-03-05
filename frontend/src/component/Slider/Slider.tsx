@@ -1,4 +1,4 @@
-import { Input } from "../Input/Input";
+import { Input } from "../../component/Input/Input";
 
 export function Slider() {
     return (
