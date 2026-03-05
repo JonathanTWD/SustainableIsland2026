@@ -5,12 +5,13 @@ import { CalculatorPage } from "../pages/CalculatorPageView";
 import { InformationPage } from "../pages/InformationPageView";
 import LoginPage from "../pages/LoginPageView";
 import SignupPage from "../pages/SignUpPageView";
+import { Nav } from "../component/Nav/Nav";
 
 const Layout = () => {
   return (
     <div>
-      <div>Shared Layout</div>
       <Outlet />
+      <Nav />
     </div>
   );
 };
