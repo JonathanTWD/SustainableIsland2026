@@ -3,6 +3,7 @@ import { Prisma } from "@prisma/client";
 import { prisma } from "../config/db";
 import { CreateWaterCalculationDTO, UpdateWaterCalculationDTO, WaterCalculationResponse } from "../interfaces/water-calculation.interface";
 import { parseIdParam } from "../utils/id.util";
+import { toNullableDecimal } from "../utils/nullable-decimal.util";
 
 const toNullableInt = (value: number | undefined): number | null => {
   if (value === undefined) {
@@ -14,18 +15,6 @@ const toNullableInt = (value: number | undefined): number | null => {
   }
 
   return value;
-};
-
-const toNullableDecimal = (value: number | undefined): Prisma.Decimal | null => {
-  if (value === undefined) {
-    return null;
-  }
-
-  if (!Number.isFinite(value) || value < 0) {
-    return null;
-  }
-
-  return new Prisma.Decimal(value);
 };
 
 const mapWaterCalculation = (
