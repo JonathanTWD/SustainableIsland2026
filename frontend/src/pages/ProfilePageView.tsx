@@ -3,6 +3,7 @@ import WaterChart from "../component/ProfileComponents/ProfileGraph";
 import { ProfileHeader } from "../component/ProfileComponents/ProfileHeader";
 import { ProfileTextGraph } from "../component/ProfileComponents/ProfileTextGraph";
 import { ProfileDropDown } from "../component/ProfileComponents/DropDown";
+import { ProfileContact } from "../component/ProfileComponents/ProfileContact";
 
 const waterData = [
     { name: "Shower", value: 40, fill: "#3b82f6" },
@@ -38,6 +39,9 @@ export const ProfilePage = () => {
             <div>
                 <WaterChart data={waterData} />
                 <ProfileTextGraph data={waterData} />
+            </div>
+            <div>
+                <ProfileContact email="watertracker@watertracker.com" phone={12345678} />
             </div>
         </>
     );
