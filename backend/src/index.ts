@@ -1,10 +1,17 @@
 import "dotenv/config";
 import express, { Request, Response } from "express";
 import { checkDatabaseConnection } from "./config/db";
+import userRoutes from "./routes/user.routes";
+import waterCalculationRoutes from "./routes/water-calculation.routes";
+import savingGoalRoutes from "./routes/saving-goal.routes";
 
 const app = express();
 const PORT = Number(process.env.PORT);
 
+// JSON body parser middleware
+app.use(express.json());
+
+// Routes
 app.get("/", (req: Request, res: Response) => {
     res.json({ message: "Server is working" });
 });
@@ -19,6 +26,11 @@ app.get("/health/db", async (_req: Request, res: Response) => {
     } 
 });
 
+// API Routes
+app.use("/api/users", userRoutes);
+app.use("/api/water-calculations", waterCalculationRoutes);
+app.use("/api/saving-goals", savingGoalRoutes);
+
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`Server running at http://localhost:${PORT}`);
 });
