@@ -1,9 +1,12 @@
-import { InformationHeader } from "../component/InformationComponents/InformationHeader"
+
+import { Header } from "../component/Header/Header";
+import { InformationTips } from "../component/InformationComponents/InformationTips";
 
 export const InformationPage = () => {
     return (
         <div>
-            <InformationHeader />
+            <Header />
+            <InformationTips />
         </div>
-    )
-}
+    );
+};
