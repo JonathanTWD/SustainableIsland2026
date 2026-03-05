@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
 import { Prisma } from "@prisma/client";
 import { prisma } from "../config/db";
-import { CreateUserDTO, UpdateUserDTO, User, UserResponse } from "../interfaces/user.interface";
+import { UpdateUserDTO, User, UserResponse } from "../interfaces/user.interface";
 import { hashPassword } from "../utils/password.util";
 import { parseIdParam } from "../utils/id.util";
+import { AuthRequest } from "../interfaces/auth.interface";
 
 const excludePassword = (user: User): UserResponse => {
   const { password_hash, ...userWithoutPassword } = user;
@@ -46,55 +47,17 @@ export const getUserById = async (req: Request, res: Response) => {
   }
 };
 
-// POST /api/users
-export const createUser = async (req: Request, res: Response) => {
-  try {
-    const { name, email, password }: CreateUserDTO = req.body;
-
-    if (!email || !password) {
-      return res
-        .status(400)
-        .json({ error: "Email and password are required" });
-    }
-
-    if (password.length < 6) {
-      return res
-        .status(400)
-        .json({ error: "Password must be at least 6 characters" });
-    }
-
-    const existingUser = await prisma.users.findUnique({
-      where: { email },
-    });
-
-    if (existingUser) {
-      return res.status(409).json({ error: "Email is already registered" });
-    }
-
-    const password_hash = await hashPassword(password);
-
-    const newUser = await prisma.users.create({
-      data: {
-        name: name || null,
-        email,
-        password_hash,
-      },
-    });
-
-    res.status(201).json(excludePassword(newUser));
-  } catch (error) {
-    console.error("Error creating user:", error);
-    res.status(500).json({ error: "Error creating user" });
-  }
-};
-
-export const updateUser = async (req: Request, res: Response) => {
+export const updateUser = async (req: AuthRequest, res: Response) => {
   try {
     const userId = parseIdParam(req.params.id);
     const { name, email, password }: UpdateUserDTO = req.body;
 
     if (userId === null) {
       return res.status(400).json({ error: "Invalid ID" });
+    }
+
+    if (req.user?.userId !== userId) {
+      return res.status(403).json({ error: "Forbidden. You can only update your own account" });
     }
 
     const user = await prisma.users.findUnique({
@@ -112,7 +75,6 @@ export const updateUser = async (req: Request, res: Response) => {
     }
 
     if (email) {
-      // Check whether the email is already used by another user
       const existingUser = await prisma.users.findUnique({
         where: { email },
       });
@@ -146,7 +108,7 @@ export const updateUser = async (req: Request, res: Response) => {
 };
 
 // DELETE /api/users/:id
-export const deleteUser = async (req: Request, res: Response) => {
+export const deleteUser = async (req: AuthRequest, res: Response) => {
   try {
     const userId = parseIdParam(req.params.id);
 
@@ -154,7 +116,10 @@ export const deleteUser = async (req: Request, res: Response) => {
       return res.status(400).json({ error: "Invalid ID" });
     }
 
-    // Check whether the user exists
+    if (req.user?.userId !== userId) {
+        return res.status(403).json({ error: "Forbidden. You can only delete your own account" });
+    }
+
     const user = await prisma.users.findUnique({
       where: { id: userId },
     });
