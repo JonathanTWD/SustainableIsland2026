@@ -46,12 +46,11 @@ async function main() {
 
 	await prisma.waterReference.createMany({
 		data: [
-			{ household_members: 1, average_liters_per_day: 150 },
-			{ household_members: 2, average_liters_per_day: 280 },
-			{ household_members: 3, average_liters_per_day: 390 },
-			{ household_members: 4, average_liters_per_day: 500 },
-			{ household_members: 5, average_liters_per_day: 610 },
-			{ household_members: 6, average_liters_per_day: 720 },
+			{ household_members: 1, average_liters_per_day: 128 },
+			{ household_members: 2, average_liters_per_day: 256 },
+			{ household_members: 3, average_liters_per_day: 384 },
+			{ household_members: 4, average_liters_per_day: 512 },
+			{ household_members: 5, average_liters_per_day: 640 },
 		],
 	});
 
