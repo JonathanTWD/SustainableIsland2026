@@ -4,6 +4,7 @@ import { prisma } from "../config/db";
 import { CreateSavingGoalDTO, UpdateSavingGoalDTO, SavingGoalResponse } from "../interfaces/saving-goal.interface";
 import { parseIdParam } from "../utils/id.util";
 import { toNullableDecimal } from "../utils/nullable-decimal.util";
+import { AuthRequest } from "../interfaces/auth.interface";
 
 const mapSavingGoal = (
   goal: {
@@ -21,51 +22,56 @@ const mapSavingGoal = (
   created_at: goal.created_at,
 });
 
-// GET /api/saving-goals
-export const getAllSavingGoals = async (_req: Request, res: Response) => {
-  try {
-    const records = await prisma.savingGoals.findMany({
-      orderBy: { created_at: "desc" },
-    });
+// // GET /api/saving-goals
+// export const getAllSavingGoals = async (_req: Request, res: Response) => {
+//   try {
+//     const records = await prisma.savingGoals.findMany({
+//       orderBy: { created_at: "desc" },
+//     });
 
-    res.json(records.map(mapSavingGoal));
-  } catch (error) {
-    console.error("Error fetching saving goals:", error);
-    res.status(500).json({ error: "Error fetching saving goals" });
-  }
-};
+//     res.json(records.map(mapSavingGoal));
+//   } catch (error) {
+//     console.error("Error fetching saving goals:", error);
+//     res.status(500).json({ error: "Error fetching saving goals" });
+//   }
+// };
 
-// GET /api/saving-goals/:id
-export const getSavingGoalById = async (req: Request, res: Response) => {
-  try {
-    const id = parseIdParam(req.params.id);
+// // GET /api/saving-goals/:id
+// export const getSavingGoalById = async (req: Request, res: Response) => {
+//   try {
+//     const id = parseIdParam(req.params.id);
 
-    if (id === null) {
-      return res.status(400).json({ error: "Invalid ID" });
-    }
+//     if (id === null) {
+//       return res.status(400).json({ error: "Invalid ID" });
+//     }
 
-    const goal = await prisma.savingGoals.findUnique({
-      where: { id },
-    });
+//     const goal = await prisma.savingGoals.findUnique({
+//       where: { id },
+//     });
 
-    if (!goal) {
-      return res.status(404).json({ error: "Saving goal not found" });
-    }
+//     if (!goal) {
+//       return res.status(404).json({ error: "Saving goal not found" });
+//     }
 
-    res.json(mapSavingGoal(goal));
-  } catch (error) {
-    console.error("Error fetching saving goal:", error);
-    res.status(500).json({ error: "Error fetching saving goal" });
-  }
-};
+//     res.json(mapSavingGoal(goal));
+//   } catch (error) {
+//     console.error("Error fetching saving goal:", error);
+//     res.status(500).json({ error: "Error fetching saving goal" });
+//   }
+// };
 
 // GET /api/saving-goals/user/:userId
 export const getSavingGoalsByUserId = async (req: Request, res: Response) => {
   try {
     const userId = parseIdParam(req.params.userId);
+    const authReq = req as AuthRequest;
 
     if (userId === null) {
       return res.status(400).json({ error: "Invalid user ID" });
+    }
+
+    if (userId !== authReq.user?.userId) {
+      return res.status(403).json({ error: "Forbidden: You can only view your own saving goals" });
     }
 
     const records = await prisma.savingGoals.findMany({
@@ -84,9 +90,14 @@ export const getSavingGoalsByUserId = async (req: Request, res: Response) => {
 export const createSavingGoal = async (req: Request, res: Response) => {
   try {
     const payload: CreateSavingGoalDTO = req.body;
+    const authReq = req as AuthRequest;
 
     if (!Number.isInteger(payload.user_id) || payload.user_id <= 0) {
       return res.status(400).json({ error: "Valid user_id is required" });
+    }
+
+    if (authReq.user?.userId !== payload.user_id) {
+      return res.status(403).json({ error: "Forbidden: You can only create saving goals for your own account" });
     }
 
     const userExists = await prisma.users.findUnique({
@@ -96,6 +107,14 @@ export const createSavingGoal = async (req: Request, res: Response) => {
 
     if (!userExists) {
       return res.status(404).json({ error: "User not found" });
+    }
+
+    const existingGoal = await prisma.savingGoals.findFirst({
+      where: { user_id: payload.user_id },
+    });
+
+    if (existingGoal) {
+      return res.status(409).json({ error: "A saving goal already exists for this user. Please update the existing goal instead." });
     }
 
     const goal = await prisma.savingGoals.create({
@@ -117,6 +136,7 @@ export const createSavingGoal = async (req: Request, res: Response) => {
 export const updateSavingGoal = async (req: Request, res: Response) => {
   try {
     const id = parseIdParam(req.params.id);
+    const authReq = req as AuthRequest;
 
     if (id === null) {
       return res.status(400).json({ error: "Invalid ID" });
@@ -126,11 +146,15 @@ export const updateSavingGoal = async (req: Request, res: Response) => {
 
     const existing = await prisma.savingGoals.findUnique({
       where: { id },
-      select: { id: true },
+      select: { id: true, user_id: true },
     });
 
     if (!existing) {
       return res.status(404).json({ error: "Saving goal not found" });
+    }
+
+    if (existing.user_id !== authReq.user?.userId) {
+      return res.status(403).json({ error: "Forbidden: You can only edit your own saving goals" });
     }
 
     const updateData: Prisma.SavingGoalsUpdateInput = {};
@@ -159,6 +183,7 @@ export const updateSavingGoal = async (req: Request, res: Response) => {
 export const deleteSavingGoal = async (req: Request, res: Response) => {
   try {
     const id = parseIdParam(req.params.id);
+    const authReq = req as AuthRequest;
 
     if (id === null) {
       return res.status(400).json({ error: "Invalid ID" });
@@ -166,11 +191,15 @@ export const deleteSavingGoal = async (req: Request, res: Response) => {
 
     const existing = await prisma.savingGoals.findUnique({
       where: { id },
-      select: { id: true },
+      select: { id: true, user_id: true },
     });
 
     if (!existing) {
       return res.status(404).json({ error: "Saving goal not found" });
+    }
+
+    if (existing.user_id !== authReq.user?.userId) {
+      return res.status(403).json({ error: "Forbidden: You can only delete your own saving goals" });
     }
 
     await prisma.savingGoals.delete({

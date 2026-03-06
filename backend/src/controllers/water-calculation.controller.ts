@@ -4,6 +4,7 @@ import { prisma } from "../config/db";
 import { CreateWaterCalculationDTO, UpdateWaterCalculationDTO, WaterCalculationResponse } from "../interfaces/water-calculation.interface";
 import { parseIdParam } from "../utils/id.util";
 import { toNullableDecimal } from "../utils/nullable-decimal.util";
+import { AuthRequest } from "../interfaces/auth.interface";
 
 const toNullableInt = (value: number | undefined): number | null => {
   if (value === undefined) {
@@ -40,51 +41,56 @@ const mapWaterCalculation = (
       : Number(waterCalculation.estimated_daily_consumption),
 });
 
-// GET /api/water-calculations
-export const getAllWaterCalculations = async (_req: Request, res: Response) => {
-  try {
-    const records = await prisma.waterCalculations.findMany({
-      orderBy: { created_at: "desc" },
-    });
+// // GET /api/water-calculations
+// export const getAllWaterCalculations = async (_req: Request, res: Response) => {
+//   try {
+//     const records = await prisma.waterCalculations.findMany({
+//       orderBy: { created_at: "desc" },
+//     });
 
-    res.json(records.map(mapWaterCalculation));
-  } catch (error) {
-    console.error("Error fetching water calculations:", error);
-    res.status(500).json({ error: "Error fetching water calculations" });
-  }
-};
+//     res.json(records.map(mapWaterCalculation));
+//   } catch (error) {
+//     console.error("Error fetching water calculations:", error);
+//     res.status(500).json({ error: "Error fetching water calculations" });
+//   }
+// };
 
-// GET /api/water-calculations/:id
-export const getWaterCalculationById = async (req: Request, res: Response) => {
-  try {
-    const id = parseIdParam(req.params.id);
+// // GET /api/water-calculations/:id
+// export const getWaterCalculationById = async (req: Request, res: Response) => {
+//   try {
+//     const id = parseIdParam(req.params.id);
 
-    if (id === null) {
-      return res.status(400).json({ error: "Invalid ID" });
-    }
+//     if (id === null) {
+//       return res.status(400).json({ error: "Invalid ID" });
+//     }
 
-    const record = await prisma.waterCalculations.findUnique({
-      where: { id },
-    });
+//     const record = await prisma.waterCalculations.findUnique({
+//       where: { id },
+//     });
 
-    if (!record) {
-      return res.status(404).json({ error: "Water calculation not found" });
-    }
+//     if (!record) {
+//       return res.status(404).json({ error: "Water calculation not found" });
+//     }
 
-    res.json(mapWaterCalculation(record));
-  } catch (error) {
-    console.error("Error fetching water calculation:", error);
-    res.status(500).json({ error: "Error fetching water calculation" });
-  }
-};
+//     res.json(mapWaterCalculation(record));
+//   } catch (error) {
+//     console.error("Error fetching water calculation:", error);
+//     res.status(500).json({ error: "Error fetching water calculation" });
+//   }
+// };
 
 // GET /api/water-calculations/user/:userId
 export const getWaterCalculationsByUserId = async (req: Request, res: Response) => {
   try {
     const userId = parseIdParam(req.params.userId);
+    const authReq = req as AuthRequest;
 
     if (userId === null) {
       return res.status(400).json({ error: "Invalid user ID" });
+    }
+
+    if (userId !== authReq.user?.userId) {
+      return res.status(403).json({ error: "Forbidden: You can only view your own calculations" });
     }
 
     const records = await prisma.waterCalculations.findMany({
@@ -103,9 +109,14 @@ export const getWaterCalculationsByUserId = async (req: Request, res: Response) 
 export const createWaterCalculation = async (req: Request, res: Response) => {
   try {
     const payload: CreateWaterCalculationDTO = req.body;
+    const authReq = req as AuthRequest;
 
     if (!Number.isInteger(payload.user_id) || payload.user_id <= 0) {
       return res.status(400).json({ error: "Valid user_id is required" });
+    }
+
+    if (authReq.user?.userId !== payload.user_id) {
+      return res.status(403).json({ error: "Forbidden: You can only create calculations for your own account" });
     }
 
     const userExists = await prisma.users.findUnique({
@@ -144,6 +155,7 @@ export const createWaterCalculation = async (req: Request, res: Response) => {
 export const updateWaterCalculation = async (req: Request, res: Response) => {
   try {
     const id = parseIdParam(req.params.id);
+    const authReq = req as AuthRequest;
 
     if (id === null) {
       return res.status(400).json({ error: "Invalid ID" });
@@ -153,11 +165,15 @@ export const updateWaterCalculation = async (req: Request, res: Response) => {
 
     const existing = await prisma.waterCalculations.findUnique({
       where: { id },
-      select: { id: true },
+      select: { id: true, user_id: true },
     });
 
     if (!existing) {
       return res.status(404).json({ error: "Water calculation not found" });
+    }
+
+    if (existing.user_id !== authReq.user?.userId) {
+      return res.status(403).json({ error: "Forbidden: You can only edit your own calculations" });
     }
 
     const updateData: Prisma.WaterCalculationsUpdateInput = {};
@@ -215,6 +231,7 @@ export const updateWaterCalculation = async (req: Request, res: Response) => {
 export const deleteWaterCalculation = async (req: Request, res: Response) => {
   try {
     const id = parseIdParam(req.params.id);
+    const authReq = req as AuthRequest;
 
     if (id === null) {
       return res.status(400).json({ error: "Invalid ID" });
@@ -222,11 +239,15 @@ export const deleteWaterCalculation = async (req: Request, res: Response) => {
 
     const existing = await prisma.waterCalculations.findUnique({
       where: { id },
-      select: { id: true },
+      select: { id: true, user_id: true },
     });
 
     if (!existing) {
       return res.status(404).json({ error: "Water calculation not found" });
+    }
+
+    if (existing.user_id !== authReq.user?.userId) {
+      return res.status(403).json({ error: "Forbidden: You can only delete your own calculations" });
     }
 
     await prisma.waterCalculations.delete({
