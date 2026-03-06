@@ -5,7 +5,7 @@ interface ButtonProps {
 
 export function Button({ text, onClick }: ButtonProps) {
     return (
-        <button onClick={onClick} className="px-10 py-2 bg-[#1AD0CD] text-white rounded hover:bg-cyan-600 transition-colors duration-300">
+        <button onClick={onClick} className="px-10 py-2 bg-primary text-white rounded hover:bg-cyan-600 transition-colors duration-300">
             {text}
         </button>
     )
