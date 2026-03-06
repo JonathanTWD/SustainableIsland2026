@@ -27,7 +27,6 @@ export const Routing = () => {
           <Route path="information" element={<InformationPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
-          <Route path="home" element={<HomePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
