@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { RegisterDTO, LoginDTO, AuthRequest } from "../interfaces/auth.interface";
 import { registerUser, loginUser } from "../services/auth.service";
+import { prisma } from "../config/db";
 
 /**
  * Controller for user registration
@@ -54,11 +55,32 @@ export const login = async (req: Request, res: Response) => {
 
 export const getCurrentUser = async (req: AuthRequest, res: Response) => {
   try {
+    const userId = req.user?.userId;
+
+    if (!userId) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+
+    const user = await prisma.users.findUnique({
+      where: { id: userId },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        created_at: true,
+      },
+    });
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
     res.json({
       message: "You are authenticated",
-      user: req.user
+      user: user,
     });
   } catch (error) {
+    console.error("Error fetching current user:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
