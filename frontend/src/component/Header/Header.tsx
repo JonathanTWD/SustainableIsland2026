@@ -2,8 +2,8 @@ import { useLocation } from 'react-router'
 import headerImage from '../../assets/headersymbol.png'
 import logoutSymbol from '../../assets/logoutsymbol.png'
 interface HeaderProps {
-    onMenuClick: () => void;
-    isMenuOpen: boolean;
+    onMenuClick?: () => void;
+    isMenuOpen?: boolean;
 }
 
 export function Header({ onMenuClick, isMenuOpen }: HeaderProps) {
