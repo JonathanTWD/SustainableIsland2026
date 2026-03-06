@@ -13,6 +13,7 @@
     "@fontsource/kalam": "^5.2.8",
     "@fontsource/nunito": "^5.2.7",
     "@tailwindcss/vite": "^4.2.1",
+    "axios": "^1.13.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router": "^7.13.1",
