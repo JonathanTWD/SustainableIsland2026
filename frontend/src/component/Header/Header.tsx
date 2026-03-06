@@ -1,8 +1,12 @@
 import { useLocation } from 'react-router'
 import headerImage from '../../assets/headersymbol.png'
 import logoutSymbol from '../../assets/logoutsymbol.png'
+interface HeaderProps {
+    onMenuClick: () => void;
+    isMenuOpen: boolean;
+}
 
-export function Header() {
+export function Header({ onMenuClick, isMenuOpen }: HeaderProps) {
     const location = useLocation()
 
     if (location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login') {
@@ -45,7 +49,14 @@ export function Header() {
                     <h3 className="text-xl font-['Nunito']">Statistics</h3>
                 </div>
                 <div className="w-36 inline-flex justify-end items-end gap-2">
+                    <button
+                        type="button"
+                        onClick={onMenuClick}
+                        aria-expanded={isMenuOpen}
+                        aria-label="Toggle profile menu"
+                    >
                     <img src={logoutSymbol} alt="Logout" className="w-8 h-8" />
+                    </button>
                 </div>
             </header>
         )
