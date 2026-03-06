@@ -1,34 +1,35 @@
-import { useState } from "react";
-
 interface WaterSliderProps {
     value: number;
     onChange: (value: number) => void;
+    onCommit?: (value: number) => void;
     min: number;
     max: number;
     title?: string;
     subText?: string;
-
 }
 
 export const Slider = (props: WaterSliderProps) => {
-    const [waterValue, setWaterValue] = useState(props.value);
+    const handleCommit = () => {
+        props.onCommit?.(props.value);
+    };
 
     return (
-        <>
-            <p>{props.title}</p>
+        <div className="space-y-1">
+            <p className="text-sm font-medium text-gray-800">{props.title}</p>
             <input
                 type="range"
                 min={props.min}
                 max={props.max}
-                value={waterValue}
-                onChange={(e) => {
-                    const newValue = Number(e.target.value);
-                    setWaterValue(newValue);
-                    props.onChange(newValue);
-                }}
-                className="slider"
+                value={props.value}
+                onChange={(e) => props.onChange(Number(e.target.value))}
+                onMouseUp={handleCommit}
+                onTouchEnd={handleCommit}
+                onBlur={handleCommit}
+                className="slider w-full accent-blue-600"
             />
-            <p>{props.subText}: {waterValue}</p>
-        </>
+            <p className="text-sm text-gray-600">
+                {props.subText}: <span className="font-semibold text-gray-900">{props.value}</span>
+            </p>
+        </div>
     );
-}
+};
