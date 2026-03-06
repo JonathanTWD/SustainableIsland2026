@@ -3,6 +3,7 @@ import { useState } from "react"
 interface WaterCalcProps {
     value: number
     onChange: (value: number) => void
+    onCommit?: (value: number) => void
     min: number
     max: number
     title?: string
@@ -16,7 +17,7 @@ export function Input(props: WaterCalcProps) {
 
     return (
         <>
-            <p className="text-white">{props.title}</p>
+            <p className="text-black">{props.title}</p>
             <input
                 type="range"
                 min={props.min}
@@ -27,12 +28,17 @@ export function Input(props: WaterCalcProps) {
                     setWaterValue(newValue)
                     props.onChange(newValue)
                 }}
+                onMouseUp={() => props.onCommit?.(waterValue)}
+                onTouchEnd={() => props.onCommit?.(waterValue)}
+                onKeyUp={(e) => {
+                    if (e.key === "Enter" || e.key === " ") props.onCommit?.(waterValue)
+                }}
                 className="w-full h-2 rounded-lg appearance-none cursor-pointer slider touch-none slider"
                 style={{
                     background: `linear-gradient(to right, #1AD0CD ${percentage}%, #ffffff ${percentage}%)`
                 }}
             />
-            <p className="text-white flex justify-between">
+            <p className="text-black flex justify-between">
                 {Array.from({ length: 6 }, (_, i) => {
                     const value = props.min + i * ((props.max - props.min) / 5)
                     return (
@@ -42,7 +48,7 @@ export function Input(props: WaterCalcProps) {
                     )
                 })}
             </p>
-            <p className="text-white text-right">{props.text || '\u00A0'}</p>
+            <p className="text-black text-right">{props.text || '\u00A0'}</p>
         </>
     )
 }

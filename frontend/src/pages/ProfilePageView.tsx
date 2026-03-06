@@ -24,7 +24,7 @@ export const ProfilePage = () => {
 
     const handleMenuSelect = (itemId: string) => {
         console.log("Selected:", itemId);
-        setIsMenuOpen(false); // luk menu efter klik
+        setIsMenuOpen(false); // close menu after selection
     };
 
     return (
