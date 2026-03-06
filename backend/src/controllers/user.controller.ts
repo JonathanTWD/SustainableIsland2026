@@ -23,29 +23,29 @@ export const getAllUsers = async (_req: Request, res: Response) => {
   }
 };
 
-// GET /api/users/:id
-export const getUserById = async (req: Request, res: Response) => {
-  try {
-    const userId = parseIdParam(req.params.id);
+// // GET /api/users/:id
+// export const getUserById = async (req: Request, res: Response) => {
+//   try {
+//     const userId = parseIdParam(req.params.id);
 
-    if (userId === null) {
-      return res.status(400).json({ error: "Invalid ID" });
-    }
+//     if (userId === null) {
+//       return res.status(400).json({ error: "Invalid ID" });
+//     }
 
-    const user = await prisma.users.findUnique({
-      where: { id: userId },
-    });
+//     const user = await prisma.users.findUnique({
+//       where: { id: userId },
+//     });
 
-    if (!user) {
-      return res.status(404).json({ error: "User not found" });
-    }
+//     if (!user) {
+//       return res.status(404).json({ error: "User not found" });
+//     }
 
-    res.json(excludePassword(user));
-  } catch (error) {
-    console.error("Error fetching user:", error);
-    res.status(500).json({ error: "Error fetching user" });
-  }
-};
+//     res.json(excludePassword(user));
+//   } catch (error) {
+//     console.error("Error fetching user:", error);
+//     res.status(500).json({ error: "Error fetching user" });
+//   }
+// };
 
 export const updateUser = async (req: AuthRequest, res: Response) => {
   try {
