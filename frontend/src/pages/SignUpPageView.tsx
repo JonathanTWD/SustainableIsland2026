@@ -1,39 +1,47 @@
+import Button from "../components/Button";
 import InputField from "../components/InputField";
 import ToggleSwitch from "../components/ToggleSwitch";
 
 
-const login = () => {
+const SignupPage = () => {
     return (
         <>
         <div className="px-6 py-15 flex flex-col gap-12">
             {/* Welcome banner */}
-            <h1 className="text-[#0A302F] font-kalam font-bold text-[40px]">
+            <h1 className="text-secondary font-kalam font-bold text-[40px]">
                 Welcome
             </h1>
+
             {/* Input fields */}
             <div className="flex flex-col gap-6">
+                <div className="flex justify-center">
+                    <span className="text-secondary font-nunito text-[24px] font-bold ">
+                        Create account
+                    </span>
+                </div>
+                <InputField type="text" placeholder="Username" />
                 <InputField type="text" placeholder="Email" />
                 <InputField type="password" placeholder="Password" />
             </div >
+
             {/* Buttons */}
             <div className="flex-col gap-2.5">
-                <button className="bg-[#1AD0CD] text-[32px] font-nunito font-medium w-full py-2.5 flex items-center justify-center rounded-2xl hover:bg-[#A5FFFE]">
-                    Log in
-                </button>
+                <Button text="Sign up" onClick={() => {}} 
+                    />
                 <div className="flex items-center gap-5 my-2.5">
-                    <div className="grow border-t border-[#0A302F] "></div>
-                    <span className="text-[#0A302F] font-kalam text-[20px]">
+                    <div className="grow border-t border-secondary "></div>
+                    <span className="text-secondary font-kalam text-[20px]">
                         Or
                     </span>
-                    <div className="grow border-t border-[#0A302F]"></div>
+                    <div className="grow border-t border-secondary"></div>
                 </div>
-                <button className="bg-[#1AD0CD] text-[32px] font-nunito font-medium w-full py-2.5 flex items-center justify-center rounded-2xl hover:bg-[#A5FFFE]">
-                    Sign Up
-                </button>
+                <Button text="Log in" onClick={() => {}} 
+                    />
             </div>
+
             {/* Dark mode Toggle */}
             <div className="flex flex-col w-full items-center">
-                <span className="font-nunito text-[16px] text-[#0A302F] font-medium">
+                <span className="font-nunito text-[16px] text-secondary font-medium">
                     Dark mode
                 </span>
                 <ToggleSwitch />
@@ -42,4 +50,4 @@ const login = () => {
         </>
     );
 };
-export default login;
+export default SignupPage;
