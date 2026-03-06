@@ -10,7 +10,7 @@ const InputField = ({ type = "text", placeholder = "" }: InputFieldProps) => {
         <input 
             type={type} 
             placeholder={placeholder}
-            className="border-2 border-[#0A302F] font-nunito text-2xl placeholder-[#0A302F] rounded-2xl px-4 py-3 focus:none"
+            className="border-2 border-secondary font-nunito text-2xl placeholder-secondary rounded-2xl px-4 py-3 focus:none"
         />
         </>
     );

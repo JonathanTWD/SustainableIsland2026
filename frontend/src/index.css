@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-kalam: 'Kalam', cursive;
+  --font-nunito: 'Nunito', sans-serif;
+
+  --color-primary: #1AD0CD;
+  --color-secondary: #0A302F;
+  --color-accent: #A5FFFE;
+  --color-medium: #137573;
+}
