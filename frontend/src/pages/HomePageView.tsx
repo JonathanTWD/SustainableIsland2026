@@ -1,6 +1,7 @@
 import Goals from "../component/HomePageComponents/Goals";
 import waterImg from "../assets/water.png";
 import { Header } from "../component/Header/Header";
+import { Description } from "../component/SubText/Description";
 
 
 const HomePage = () => {
@@ -11,9 +12,7 @@ const HomePage = () => {
                 <div className="flex flex-col items-center">
                     <Header title="Track your water protect the future" />
                 </div>
-                <p className="font-nunito font-bold text-[16px] flex justify-center text-center">
-                    Measure your water use, set goals, and start saving. Every drop counts.
-                </p>
+                <Description text="Measure your water use, set goals, and start saving. Every drop counts." className="font-bold text-[16px] flex justify-center text-center" />
                 <button className="font-nunito font-semibold text-[24px] bg-medium text-white rounded-2xl px-10 py-3">
                     Start tracking
                 </button>

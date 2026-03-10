@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Description } from "../SubText/Description"
 
 interface WaterCalcProps {
     value: number
@@ -48,7 +49,8 @@ export function Input(props: WaterCalcProps) {
                     )
                 })}
             </p>
-            <p className="text-black text-right">{props.text || '\u00A0'}</p>
+            <Description text={props.text || '\u00A0'} className="text-black text-right" />
+            
         </>
     )
 }
