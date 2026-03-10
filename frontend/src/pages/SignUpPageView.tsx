@@ -1,5 +1,5 @@
+import { Button } from "../component/Button/Button";
 import { Header } from "../component/Header/Header";
-import Button from "../component/LoginSignInComponents/Button";
 import InputField from "../component/LoginSignInComponents/InputField";
 import ToggleSwitch from "../component/LoginSignInComponents/ToggleSwitch";
 
