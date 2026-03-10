@@ -71,7 +71,7 @@ export const Map = () => {
   }, []);
 
   return (
-    <div className="w-full h-150 m rounded-lg overflow-hidden shadow-md z-0 relative">
+    <div className="w-[90%] mx-auto h-125 my-8 rounded-lg overflow-hidden shadow-md z-0 relative">
       <MapContainer
         center={[20, 0]}
         zoom={2.5}

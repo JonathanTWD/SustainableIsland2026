@@ -16,7 +16,7 @@ export const Legend = () => {
   ];
 
   return (
-    <div className="absolute bottom-6 left-6 z-[1000] flex flex-col items-start min-w-[32px]">
+    <div className="absolute bottom-6 left-6 z-1 flex flex-col items-start min-w-8">
       {isOpen ? (
         <div className="bg-white/95 p-4 rounded-lg shadow-lg border border-gray-200">
           <div className="flex justify-between items-center mb-3">
