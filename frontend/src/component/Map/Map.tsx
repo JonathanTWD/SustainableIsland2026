@@ -5,6 +5,7 @@ import type { FeatureCollection, Geometry, Feature } from "geojson";
 import waterData from "../../data/water-consumption-by-country-2026.json";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import { Legend } from "./Legend";
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -70,16 +71,20 @@ export const Map = () => {
   }, []);
 
   return (
-    <div className="w-full h-96 my-8 rounded-lg overflow-hidden shadow-md z-0 relative">
+    <div className="w-full h-150 m rounded-lg overflow-hidden shadow-md z-0 relative">
       <MapContainer
         center={[20, 0]}
-        zoom={2}
+        zoom={2.5}
+        minZoom={2.3}
         scrollWheelZoom={true}
         className="w-full h-full z-0"
+        maxBounds={[[-90, -180], [90, 180]]}
+        maxBoundsViscosity={1.0}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          noWrap={true}
         />
         
         {geoData && (
@@ -90,6 +95,7 @@ export const Map = () => {
           />
         )}
       </MapContainer>
+      <Legend />
     </div>
   );
 };

@@ -3,14 +3,25 @@ import { InformationTips } from "../component/InformationComponents/InformationT
 import { Map } from "../component/Map/Map";
 
 export const InformationPage = () => {
-    return (
-        <div className="container mx-auto px-4 pb-8">
-            <Header />
-            <div className="mt-8">
-                <h2 className="text-2xl font-bold mb-4">Consumo de agua mundial</h2>
-                <Map />
-            </div>
-            <InformationTips />
-        </div>
-    );
+  return (
+    <div className="container mx-auto px-4 pb-8">
+      <Header />
+      <InformationTips />
+      <div className="mt-8">
+        <h2 className="text-2xl font-bold mb-4">Water use per capita</h2>
+        <Map />
+        <h6 className="font-medium text-white">
+          Source:{" "}
+          <a
+            href="https://worldpopulationreview.com/country-rankings/water-consumption-by-country"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" text-blue-400 hover:underline"
+          >
+            World Population Review
+          </a>
+        </h6>
+      </div>
+    </div>
+  );
 };
