@@ -36,7 +36,7 @@
   },
   {
     "flagCode": "US",
-    "country": "United States",
+    "country": "United States of America",
     "AnnualWaterWithdrawalPerCapita_2022": 1300.866,
     "AnnualWaterWithdrawal_2022": 444290000000,
     "AnnualFreshwaterWithdrawal_2022": 444290000000
@@ -253,7 +253,7 @@
   },
   {
     "flagCode": "RS",
-    "country": "Serbia",
+    "country": "Republic of Serbia",
     "AnnualWaterWithdrawalPerCapita_2022": 749.6452,
     "AnnualWaterWithdrawal_2022": 5091000000,
     "AnnualFreshwaterWithdrawal_2022": 5091000000
@@ -1023,7 +1023,7 @@
   },
   {
     "flagCode": "TZ",
-    "country": "Tanzania",
+    "country": "United Republic of Tanzania",
     "AnnualWaterWithdrawalPerCapita_2022": 80.10901,
     "AnnualWaterWithdrawal_2022": 5184000000,
     "AnnualFreshwaterWithdrawal_2022": 5184000000
@@ -1254,7 +1254,7 @@
   },
   {
     "flagCode": "CD",
-    "country": "DR Congo",
+    "country": "Democratic Republic of the Congo",
     "AnnualWaterWithdrawalPerCapita_2022": 6.67598,
     "AnnualWaterWithdrawal_2022": 683600000,
     "AnnualFreshwaterWithdrawal_2022": 683600000
