@@ -1,26 +1,24 @@
 import { useState } from "react";
+import { perCapitaGrades, totalGrades } from "../../data/legendGrades";
 
-export const Legend = () => {
+interface LegendProps {
+  dataType: "perCapita" | "total";
+}
+
+export const Legend = ({ dataType }: LegendProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const grades = [
-    { color: '#800026', label: '> 2000' },
-    { color: '#BD0026', label: '1000 - 2000' },
-    { color: '#E31A1C', label: '800 - 1000' },
-    { color: '#FC4E2A', label: '600 - 800' },
-    { color: '#FD8D3C', label: '400 - 600' },
-    { color: '#FEB24C', label: '200 - 400' },
-    { color: '#FED976', label: '100 - 200' },
-    { color: '#FFEDA0', label: '0 - 100' },
-    { color: '#ccc', label: 'No data' },
-  ];
+ 
+
+  const grades = dataType === "perCapita" ? perCapitaGrades : totalGrades;
+  const title = dataType === "perCapita" ? "m³ per capita" : "m³ (Total)";
 
   return (
     <div className="absolute bottom-6 left-6 z-1 flex flex-col items-start min-w-8">
       {isOpen ? (
         <div className="bg-white/95 p-4 rounded-lg shadow-lg border border-gray-200">
           <div className="flex justify-between items-center mb-3">
-            <h4 className="font-bold text-sm text-gray-800 mr-4">m&sup3; per capita</h4>
+            <h4 className="font-bold text-sm text-gray-800 mr-4">{title}</h4>
             <button 
               onClick={() => setIsOpen(false)}
               className="text-gray-500 hover:text-black font-bold text-lg leading-none cursor-pointer"
