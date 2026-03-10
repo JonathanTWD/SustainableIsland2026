@@ -12,7 +12,7 @@ const HomePage = () => {
                 <div className="flex flex-col items-center">
                     <Header title="Track your water protect the future" />
                 </div>
-                <Description text=" Measure your water use, set goals, and start saving. Every drop counts." />
+                <Description text="Measure your water use, set goals, and start saving. Every drop counts." className="font-bold text-[16px] flex justify-center text-center" />
                 <button className="font-nunito font-semibold text-[24px] bg-medium text-white rounded-2xl px-10 py-3">
                     Start tracking
                 </button>

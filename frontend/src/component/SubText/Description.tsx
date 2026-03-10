@@ -1,13 +1,11 @@
 interface DescriptionProps {
     text: string;
+    className?: string;
 }
 
-
-export const Description = ({ text }: DescriptionProps) => {
-
-
+export const Description = ({ text, className = "" }: DescriptionProps) => {
     return (
-        <p className="font-nunito font-bold text-[16px] flex justify-center text-center">
+        <p className={`font-nunito ${className}`}>
             {text}
         </p>
     )

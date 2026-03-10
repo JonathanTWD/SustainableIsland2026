@@ -1,3 +1,5 @@
+import { Description } from "../SubText/Description";
+
 interface SliderFactPopupProps {
     title: string;
     fact: string;
@@ -19,8 +21,8 @@ export const SliderFactPopup = ({ title, fact, calculation, onClose }: SliderFac
                 </button>
             </div>
 
-            <p className="mt-2 mb-1 text-sm text-gray-700">{fact}</p>
-            <p className="text-sm font-semibold text-gray-900">{calculation}</p>
+            <Description text={fact} className="mt-2 mb-1 text-sm text-gray-700" />
+            <Description text={calculation} className="text-sm font-semibold text-gray-900" />
         </div>
     );
 };
