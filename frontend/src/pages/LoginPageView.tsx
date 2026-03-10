@@ -22,11 +22,11 @@ const LoginPage = () => {
                 <Button text="Log in" onClick={() => {}} 
                     />
                 <div className="flex items-center gap-5 my-2.5">
-                    <div className="grow border-t border-secondary "></div>
+                    <div className="grow border-t border-secondary "/>
                     <span className="text-secondary font-kalam text-[20px]">
                         Or
                     </span>
-                    <div className="grow border-t border-secondary"></div>
+                    <div className="grow border-t border-secondary"/>
                 </div>
                 <Button text="Sign Up" onClick={() => {}} 
                     />

@@ -1,4 +1,4 @@
-import WaterDrop from '../../assets/img/Vector.svg';
+import WaterDrop from '../../assets/water-symbol.png';
 import { Description } from '../SubText/Description';
 
 interface WaterDropLogoProps {
