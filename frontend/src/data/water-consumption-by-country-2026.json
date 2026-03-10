@@ -1,0 +1,1269 @@
+[
+  {
+    "flagCode": "ME",
+    "country": "Montenegro",
+    "AnnualWaterWithdrawalPerCapita_2022": 3590.738,
+    "AnnualWaterWithdrawal_2022": 2207040000,
+    "AnnualFreshwaterWithdrawal_2022": 2207040000
+  },
+  {
+    "flagCode": "TM",
+    "country": "Turkmenistan",
+    "AnnualWaterWithdrawalPerCapita_2022": 2403.79,
+    "AnnualWaterWithdrawal_2022": 17379870000,
+    "AnnualFreshwaterWithdrawal_2022": 26245000000
+  },
+  {
+    "flagCode": "GY",
+    "country": "Guyana",
+    "AnnualWaterWithdrawalPerCapita_2022": 1758.319,
+    "AnnualWaterWithdrawal_2022": 1444700000,
+    "AnnualFreshwaterWithdrawal_2022": 1444700000
+  },
+  {
+    "flagCode": "CL",
+    "country": "Chile",
+    "AnnualWaterWithdrawalPerCapita_2022": 1655.497,
+    "AnnualWaterWithdrawal_2022": 32370000000,
+    "AnnualFreshwaterWithdrawal_2022": 35368000000
+  },
+  {
+    "flagCode": "UY",
+    "country": "Uruguay",
+    "AnnualWaterWithdrawalPerCapita_2022": 1329.274,
+    "AnnualWaterWithdrawal_2022": 4507453000,
+    "AnnualFreshwaterWithdrawal_2022": 4507453000
+  },
+  {
+    "flagCode": "US",
+    "country": "United States",
+    "AnnualWaterWithdrawalPerCapita_2022": 1300.866,
+    "AnnualWaterWithdrawal_2022": 444290000000,
+    "AnnualFreshwaterWithdrawal_2022": 444290000000
+  },
+  {
+    "flagCode": "UZ",
+    "country": "Uzbekistan",
+    "AnnualWaterWithdrawalPerCapita_2022": 1273.65,
+    "AnnualWaterWithdrawal_2022": 44500000000,
+    "AnnualFreshwaterWithdrawal_2022": 42900000000
+  },
+  {
+    "flagCode": "AZ",
+    "country": "Azerbaijan",
+    "AnnualWaterWithdrawalPerCapita_2022": 1259.603,
+    "AnnualWaterWithdrawal_2022": 12968000000,
+    "AnnualFreshwaterWithdrawal_2022": 13027000000
+  },
+  {
+    "flagCode": "KZ",
+    "country": "Kazakhstan",
+    "AnnualWaterWithdrawalPerCapita_2022": 1254.629,
+    "AnnualWaterWithdrawal_2022": 25136000000,
+    "AnnualFreshwaterWithdrawal_2022": 24966000000
+  },
+  {
+    "flagCode": "MK",
+    "country": "North Macedonia",
+    "AnnualWaterWithdrawalPerCapita_2022": 1180.014,
+    "AnnualWaterWithdrawal_2022": 2171500000,
+    "AnnualFreshwaterWithdrawal_2022": 2171500000
+  },
+  {
+    "flagCode": "KG",
+    "country": "Kyrgyzstan",
+    "AnnualWaterWithdrawalPerCapita_2022": 1101.241,
+    "AnnualWaterWithdrawal_2022": 7660000000,
+    "AnnualFreshwaterWithdrawal_2022": 7707000000
+  },
+  {
+    "flagCode": "AM",
+    "country": "Armenia",
+    "AnnualWaterWithdrawalPerCapita_2022": 1066.343,
+    "AnnualWaterWithdrawal_2022": 3072000000,
+    "AnnualFreshwaterWithdrawal_2022": 3072000000
+  },
+  {
+    "flagCode": "IR",
+    "country": "Iran",
+    "AnnualWaterWithdrawalPerCapita_2022": 1042.176,
+    "AnnualWaterWithdrawal_2022": 93300000000,
+    "AnnualFreshwaterWithdrawal_2022": 92950000000
+  },
+  {
+    "flagCode": "PR",
+    "country": "Puerto Rico",
+    "AnnualWaterWithdrawalPerCapita_2022": 1010.346,
+    "AnnualWaterWithdrawal_2022": 3274500000,
+    "AnnualFreshwaterWithdrawal_2022": 875000000
+  },
+  {
+    "flagCode": "SR",
+    "country": "Suriname",
+    "AnnualWaterWithdrawalPerCapita_2022": 988.3434,
+    "AnnualWaterWithdrawal_2022": 615900000,
+    "AnnualFreshwaterWithdrawal_2022": 615900000
+  },
+  {
+    "flagCode": "LA",
+    "country": "Laos",
+    "AnnualWaterWithdrawalPerCapita_2022": 972.3499,
+    "AnnualWaterWithdrawal_2022": 7350000000,
+    "AnnualFreshwaterWithdrawal_2022": 7350000000
+  },
+  {
+    "flagCode": "TJ",
+    "country": "Tajikistan",
+    "AnnualWaterWithdrawalPerCapita_2022": 972.2829,
+    "AnnualWaterWithdrawal_2022": 9900000000,
+    "AnnualFreshwaterWithdrawal_2022": 10602000000
+  },
+  {
+    "flagCode": "GR",
+    "country": "Greece",
+    "AnnualWaterWithdrawalPerCapita_2022": 967.4929,
+    "AnnualWaterWithdrawal_2022": 10074000000,
+    "AnnualFreshwaterWithdrawal_2022": 10047000000
+  },
+  {
+    "flagCode": "IQ",
+    "country": "Iraq",
+    "AnnualWaterWithdrawalPerCapita_2022": 962.6383,
+    "AnnualWaterWithdrawal_2022": 42424000000,
+    "AnnualFreshwaterWithdrawal_2022": 42423700000
+  },
+  {
+    "flagCode": "NZ",
+    "country": "New Zealand",
+    "AnnualWaterWithdrawalPerCapita_2022": 962.2478,
+    "AnnualWaterWithdrawal_2022": 4938000000,
+    "AnnualFreshwaterWithdrawal_2022": 9875000000
+  },
+  {
+    "flagCode": "CA",
+    "country": "Canada",
+    "AnnualWaterWithdrawalPerCapita_2022": 929.5165,
+    "AnnualWaterWithdrawal_2022": 36085000000,
+    "AnnualFreshwaterWithdrawal_2022": 36128000000
+  },
+  {
+    "flagCode": "EE",
+    "country": "Estonia",
+    "AnnualWaterWithdrawalPerCapita_2022": 892.8856,
+    "AnnualWaterWithdrawal_2022": 1205477000,
+    "AnnualFreshwaterWithdrawal_2022": 1205477000
+  },
+  {
+    "flagCode": "SZ",
+    "country": "Eswatini",
+    "AnnualWaterWithdrawalPerCapita_2022": 876.1876,
+    "AnnualWaterWithdrawal_2022": 1068000000,
+    "AnnualFreshwaterWithdrawal_2022": 1068000000
+  },
+  {
+    "flagCode": "TL",
+    "country": "Timor-Leste",
+    "AnnualWaterWithdrawalPerCapita_2022": 855.9149,
+    "AnnualWaterWithdrawal_2022": 1172000000,
+    "AnnualFreshwaterWithdrawal_2022": 1172000000
+  },
+  {
+    "flagCode": "AR",
+    "country": "Argentina",
+    "AnnualWaterWithdrawalPerCapita_2022": 832.0137,
+    "AnnualWaterWithdrawal_2022": 37780000000,
+    "AnnualFreshwaterWithdrawal_2022": 37690000000
+  },
+  {
+    "flagCode": "VN",
+    "country": "Vietnam",
+    "AnnualWaterWithdrawalPerCapita_2022": 822.928,
+    "AnnualWaterWithdrawal_2022": 82030000000,
+    "AnnualFreshwaterWithdrawal_2022": 81862000000
+  },
+  {
+    "flagCode": "DO",
+    "country": "Dominican Republic",
+    "AnnualWaterWithdrawalPerCapita_2022": 808.3087,
+    "AnnualWaterWithdrawal_2022": 9077900000,
+    "AnnualFreshwaterWithdrawal_2022": 7137000000
+  },
+  {
+    "flagCode": "SA",
+    "country": "Saudi Arabia",
+    "AnnualWaterWithdrawalPerCapita_2022": 807.8233,
+    "AnnualWaterWithdrawal_2022": 25992000000,
+    "AnnualFreshwaterWithdrawal_2022": 23380000000
+  },
+  {
+    "flagCode": "LY",
+    "country": "Libya",
+    "AnnualWaterWithdrawalPerCapita_2022": 807.0539,
+    "AnnualWaterWithdrawal_2022": 5830000000,
+    "AnnualFreshwaterWithdrawal_2022": 5720000000
+  },
+  {
+    "flagCode": "VE",
+    "country": "Venezuela",
+    "AnnualWaterWithdrawalPerCapita_2022": 801.9809,
+    "AnnualWaterWithdrawal_2022": 22626300000,
+    "AnnualFreshwaterWithdrawal_2022": 22621100000
+  },
+  {
+    "flagCode": "TH",
+    "country": "Thailand",
+    "AnnualWaterWithdrawalPerCapita_2022": 798.8532,
+    "AnnualWaterWithdrawal_2022": 57306000000,
+    "AnnualFreshwaterWithdrawal_2022": 57307000000
+  },
+  {
+    "flagCode": "PH",
+    "country": "Philippines",
+    "AnnualWaterWithdrawalPerCapita_2022": 798.8191,
+    "AnnualWaterWithdrawal_2022": 91036890000,
+    "AnnualFreshwaterWithdrawal_2022": 91036890000
+  },
+  {
+    "flagCode": "ID",
+    "country": "Indonesia",
+    "AnnualWaterWithdrawalPerCapita_2022": 798.4599,
+    "AnnualWaterWithdrawal_2022": 222635000000,
+    "AnnualFreshwaterWithdrawal_2022": 222635000000
+  },
+  {
+    "flagCode": "BG",
+    "country": "Bulgaria",
+    "AnnualWaterWithdrawalPerCapita_2022": 797.4718,
+    "AnnualWaterWithdrawal_2022": 5443434000,
+    "AnnualFreshwaterWithdrawal_2022": 5443434000
+  },
+  {
+    "flagCode": "PE",
+    "country": "Peru",
+    "AnnualWaterWithdrawalPerCapita_2022": 774.2692,
+    "AnnualWaterWithdrawal_2022": 25919000000,
+    "AnnualFreshwaterWithdrawal_2022": 25919000000
+  },
+  {
+    "flagCode": "PK",
+    "country": "Pakistan",
+    "AnnualWaterWithdrawalPerCapita_2022": 752.7677,
+    "AnnualWaterWithdrawal_2022": 183450000000,
+    "AnnualFreshwaterWithdrawal_2022": 179300000000
+  },
+  {
+    "flagCode": "RS",
+    "country": "Serbia",
+    "AnnualWaterWithdrawalPerCapita_2022": 749.6452,
+    "AnnualWaterWithdrawal_2022": 5091000000,
+    "AnnualFreshwaterWithdrawal_2022": 5091000000
+  },
+  {
+    "flagCode": "SY",
+    "country": "Syria",
+    "AnnualWaterWithdrawalPerCapita_2022": 746.1611,
+    "AnnualWaterWithdrawal_2022": 16760400000,
+    "AnnualFreshwaterWithdrawal_2022": 13964400000
+  },
+  {
+    "flagCode": "TR",
+    "country": "Turkey",
+    "AnnualWaterWithdrawalPerCapita_2022": 741.6583,
+    "AnnualWaterWithdrawal_2022": 64567640000,
+    "AnnualFreshwaterWithdrawal_2022": 64469640000
+  },
+  {
+    "flagCode": "IS",
+    "country": "Iceland",
+    "AnnualWaterWithdrawalPerCapita_2022": 731.6829,
+    "AnnualWaterWithdrawal_2022": 278300000,
+    "AnnualFreshwaterWithdrawal_2022": 290000000
+  },
+  {
+    "flagCode": "MX",
+    "country": "Mexico",
+    "AnnualWaterWithdrawalPerCapita_2022": 698.2647,
+    "AnnualWaterWithdrawal_2022": 89806000000,
+    "AnnualFreshwaterWithdrawal_2022": 89804000000
+  },
+  {
+    "flagCode": "EG",
+    "country": "Egypt",
+    "AnnualWaterWithdrawalPerCapita_2022": 688.1656,
+    "AnnualWaterWithdrawal_2022": 77500000000,
+    "AnnualFreshwaterWithdrawal_2022": 77500000000
+  },
+  {
+    "flagCode": "CR",
+    "country": "Costa Rica",
+    "AnnualWaterWithdrawalPerCapita_2022": 678.2752,
+    "AnnualWaterWithdrawal_2022": 3446835000,
+    "AnnualFreshwaterWithdrawal_2022": 3446830000
+  },
+  {
+    "flagCode": "AU",
+    "country": "Australia",
+    "AnnualWaterWithdrawalPerCapita_2022": 638.5256,
+    "AnnualWaterWithdrawal_2022": 16730000000,
+    "AnnualFreshwaterWithdrawal_2022": 11620000000
+  },
+  {
+    "flagCode": "JP",
+    "country": "Japan",
+    "AnnualWaterWithdrawalPerCapita_2022": 636.0123,
+    "AnnualWaterWithdrawal_2022": 79500000000,
+    "AnnualFreshwaterWithdrawal_2022": 79700000000
+  },
+  {
+    "flagCode": "CU",
+    "country": "Cuba",
+    "AnnualWaterWithdrawalPerCapita_2022": 629.2146,
+    "AnnualWaterWithdrawal_2022": 6959000000,
+    "AnnualFreshwaterWithdrawal_2022": 6958000000
+  },
+  {
+    "flagCode": "MM",
+    "country": "Myanmar",
+    "AnnualWaterWithdrawalPerCapita_2022": 621.1569,
+    "AnnualWaterWithdrawal_2022": 33391400000,
+    "AnnualFreshwaterWithdrawal_2022": 33231000000
+  },
+  {
+    "flagCode": "ES",
+    "country": "Spain",
+    "AnnualWaterWithdrawalPerCapita_2022": 606.7527,
+    "AnnualWaterWithdrawal_2022": 29020000000,
+    "AnnualFreshwaterWithdrawal_2022": 29020000000
+  },
+  {
+    "flagCode": "PT",
+    "country": "Portugal",
+    "AnnualWaterWithdrawalPerCapita_2022": 592.2172,
+    "AnnualWaterWithdrawal_2022": 6169170000,
+    "AnnualFreshwaterWithdrawal_2022": 6129530000
+  },
+  {
+    "flagCode": "IT",
+    "country": "Italy",
+    "AnnualWaterWithdrawalPerCapita_2022": 567.7374,
+    "AnnualWaterWithdrawal_2022": 33848000000,
+    "AnnualFreshwaterWithdrawal_2022": 33783000000
+  },
+  {
+    "flagCode": "LK",
+    "country": "Sri Lanka",
+    "AnnualWaterWithdrawalPerCapita_2022": 566.9376,
+    "AnnualWaterWithdrawal_2022": 12946000000,
+    "AnnualFreshwaterWithdrawal_2022": 12946000000
+  },
+  {
+    "flagCode": "EC",
+    "country": "Ecuador",
+    "AnnualWaterWithdrawalPerCapita_2022": 556.444,
+    "AnnualWaterWithdrawal_2022": 9918000000,
+    "AnnualFreshwaterWithdrawal_2022": 9915800000
+  },
+  {
+    "flagCode": "SD",
+    "country": "Sudan",
+    "AnnualWaterWithdrawalPerCapita_2022": 545.4268,
+    "AnnualWaterWithdrawal_2022": 26935000000,
+    "AnnualFreshwaterWithdrawal_2022": 26935000000
+  },
+  {
+    "flagCode": "IN",
+    "country": "India",
+    "AnnualWaterWithdrawalPerCapita_2022": 533.8765,
+    "AnnualWaterWithdrawal_2022": 761000000000,
+    "AnnualFreshwaterWithdrawal_2022": 647500000000
+  },
+  {
+    "flagCode": "KR",
+    "country": "South Korea",
+    "AnnualWaterWithdrawalPerCapita_2022": 522.9951,
+    "AnnualWaterWithdrawal_2022": 27082000000,
+    "AnnualFreshwaterWithdrawal_2022": 29197000000
+  },
+  {
+    "flagCode": "HU",
+    "country": "Hungary",
+    "AnnualWaterWithdrawalPerCapita_2022": 512.8237,
+    "AnnualWaterWithdrawal_2022": 4966341000,
+    "AnnualFreshwaterWithdrawal_2022": 4694820000
+  },
+  {
+    "flagCode": "CV",
+    "country": "Cape Verde",
+    "AnnualWaterWithdrawalPerCapita_2022": 509.3427,
+    "AnnualWaterWithdrawal_2022": 264726000,
+    "AnnualFreshwaterWithdrawal_2022": 179051000
+  },
+  {
+    "flagCode": "FI",
+    "country": "Finland",
+    "AnnualWaterWithdrawalPerCapita_2022": 502.5911,
+    "AnnualWaterWithdrawal_2022": 2799080000,
+    "AnnualFreshwaterWithdrawal_2022": 3000000000
+  },
+  {
+    "flagCode": "AF",
+    "country": "Afghanistan",
+    "AnnualWaterWithdrawalPerCapita_2022": 502.0572,
+    "AnnualWaterWithdrawal_2022": 20372900000,
+    "AnnualFreshwaterWithdrawal_2022": 20282000000
+  },
+  {
+    "flagCode": "MU",
+    "country": "Mauritius",
+    "AnnualWaterWithdrawalPerCapita_2022": 496.031,
+    "AnnualWaterWithdrawal_2022": 633000000,
+    "AnnualFreshwaterWithdrawal_2022": 632000000
+  },
+  {
+    "flagCode": "NO",
+    "country": "Norway",
+    "AnnualWaterWithdrawalPerCapita_2022": 492.8364,
+    "AnnualWaterWithdrawal_2022": 2689310000,
+    "AnnualFreshwaterWithdrawal_2022": 2687870000
+  },
+  {
+    "flagCode": "CO",
+    "country": "Colombia",
+    "AnnualWaterWithdrawalPerCapita_2022": 481.2259,
+    "AnnualWaterWithdrawal_2022": 24897640000,
+    "AnnualFreshwaterWithdrawal_2022": 24263640000
+  },
+  {
+    "flagCode": "AE",
+    "country": "United Arab Emirates",
+    "AnnualWaterWithdrawalPerCapita_2022": 470.3826,
+    "AnnualWaterWithdrawal_2022": 4817699000,
+    "AnnualFreshwaterWithdrawal_2022": 2264900000
+  },
+  {
+    "flagCode": "NL",
+    "country": "Netherlands",
+    "AnnualWaterWithdrawalPerCapita_2022": 459.9024,
+    "AnnualWaterWithdrawal_2022": 8234286000,
+    "AnnualFreshwaterWithdrawal_2022": 8234300000
+  },
+  {
+    "flagCode": "MG",
+    "country": "Madagascar",
+    "AnnualWaterWithdrawalPerCapita_2022": 445.4047,
+    "AnnualWaterWithdrawal_2022": 13556900000,
+    "AnnualFreshwaterWithdrawal_2022": 13457500000
+  },
+  {
+    "flagCode": "RU",
+    "country": "Russia",
+    "AnnualWaterWithdrawalPerCapita_2022": 445.2538,
+    "AnnualWaterWithdrawal_2022": 64820000000,
+    "AnnualFreshwaterWithdrawal_2022": 64820000000
+  },
+  {
+    "flagCode": "BT",
+    "country": "Bhutan",
+    "AnnualWaterWithdrawalPerCapita_2022": 432.8261,
+    "AnnualWaterWithdrawal_2022": 338000000,
+    "AnnualFreshwaterWithdrawal_2022": 337900000
+  },
+  {
+    "flagCode": "RO",
+    "country": "Romania",
+    "AnnualWaterWithdrawalPerCapita_2022": 425.2672,
+    "AnnualWaterWithdrawal_2022": 8151000000,
+    "AnnualFreshwaterWithdrawal_2022": 8151000000
+  },
+  {
+    "flagCode": "BE",
+    "country": "Belgium",
+    "AnnualWaterWithdrawalPerCapita_2022": 422.7964,
+    "AnnualWaterWithdrawal_2022": 4922120000,
+    "AnnualFreshwaterWithdrawal_2022": 4300015000
+  },
+  {
+    "flagCode": "OM",
+    "country": "Oman",
+    "AnnualWaterWithdrawalPerCapita_2022": 404.8432,
+    "AnnualWaterWithdrawal_2022": 1915000000,
+    "AnnualFreshwaterWithdrawal_2022": 1634000000
+  },
+  {
+    "flagCode": "CN",
+    "country": "China",
+    "AnnualWaterWithdrawalPerCapita_2022": 399.0266,
+    "AnnualWaterWithdrawal_2022": 581290000000,
+    "AnnualFreshwaterWithdrawal_2022": 568480000000
+  },
+  {
+    "flagCode": "SI",
+    "country": "Slovenia",
+    "AnnualWaterWithdrawalPerCapita_2022": 390.9744,
+    "AnnualWaterWithdrawal_2022": 827000000,
+    "AnnualFreshwaterWithdrawal_2022": 827000000
+  },
+  {
+    "flagCode": "FR",
+    "country": "France",
+    "AnnualWaterWithdrawalPerCapita_2022": 368.5669,
+    "AnnualWaterWithdrawal_2022": 24427660000,
+    "AnnualFreshwaterWithdrawal_2022": 24427660000
+  },
+  {
+    "flagCode": "PY",
+    "country": "Paraguay",
+    "AnnualWaterWithdrawalPerCapita_2022": 356.9282,
+    "AnnualWaterWithdrawal_2022": 2413000000,
+    "AnnualFreshwaterWithdrawal_2022": 2413000000
+  },
+  {
+    "flagCode": "GE",
+    "country": "Georgia",
+    "AnnualWaterWithdrawalPerCapita_2022": 340.831,
+    "AnnualWaterWithdrawal_2022": 1293380000,
+    "AnnualFreshwaterWithdrawal_2022": 1293380000
+  },
+  {
+    "flagCode": "KN",
+    "country": "Saint Kitts and Nevis",
+    "AnnualWaterWithdrawalPerCapita_2022": 333.9827,
+    "AnnualWaterWithdrawal_2022": 15600000,
+    "AnnualFreshwaterWithdrawal_2022": 12200000
+  },
+  {
+    "flagCode": "KP",
+    "country": "North Korea",
+    "AnnualWaterWithdrawalPerCapita_2022": 328.8333,
+    "AnnualWaterWithdrawal_2022": 8657800000,
+    "AnnualFreshwaterWithdrawal_2022": 8657800000
+  },
+  {
+    "flagCode": "IE",
+    "country": "Ireland",
+    "AnnualWaterWithdrawalPerCapita_2022": 327.3962,
+    "AnnualWaterWithdrawal_2022": 1673000000,
+    "AnnualFreshwaterWithdrawal_2022": 1673000000
+  },
+  {
+    "flagCode": "BR",
+    "country": "Brazil",
+    "AnnualWaterWithdrawalPerCapita_2022": 323.0524,
+    "AnnualWaterWithdrawal_2022": 67940000000,
+    "AnnualFreshwaterWithdrawal_2022": 67940000000
+  },
+  {
+    "flagCode": "QA",
+    "country": "Qatar",
+    "AnnualWaterWithdrawalPerCapita_2022": 322.9776,
+    "AnnualWaterWithdrawal_2022": 934198000,
+    "AnnualFreshwaterWithdrawal_2022": 250000000
+  },
+  {
+    "flagCode": "LB",
+    "country": "Lebanon",
+    "AnnualWaterWithdrawalPerCapita_2022": 320.307,
+    "AnnualWaterWithdrawal_2022": 1840000000,
+    "AnnualFreshwaterWithdrawal_2022": 1812000000
+  },
+  {
+    "flagCode": "NP",
+    "country": "Nepal",
+    "AnnualWaterWithdrawalPerCapita_2022": 319.6016,
+    "AnnualWaterWithdrawal_2022": 9497100000,
+    "AnnualFreshwaterWithdrawal_2022": 9497100000
+  },
+  {
+    "flagCode": "ZA",
+    "country": "South Africa",
+    "AnnualWaterWithdrawalPerCapita_2022": 319.5176,
+    "AnnualWaterWithdrawal_2022": 19931000000,
+    "AnnualFreshwaterWithdrawal_2022": 21110000000
+  },
+  {
+    "flagCode": "SV",
+    "country": "El Salvador",
+    "AnnualWaterWithdrawalPerCapita_2022": 308.6665,
+    "AnnualWaterWithdrawal_2022": 1938524000,
+    "AnnualFreshwaterWithdrawal_2022": 1938523000
+  },
+  {
+    "flagCode": "DE",
+    "country": "Germany",
+    "AnnualWaterWithdrawalPerCapita_2022": 306.7395,
+    "AnnualWaterWithdrawal_2022": 25792570000,
+    "AnnualFreshwaterWithdrawal_2022": 25792570000
+  },
+  {
+    "flagCode": "ZW",
+    "country": "Zimbabwe",
+    "AnnualWaterWithdrawalPerCapita_2022": 305.5363,
+    "AnnualWaterWithdrawal_2022": 4909679000,
+    "AnnualFreshwaterWithdrawal_2022": 4909679000
+  },
+  {
+    "flagCode": "DM",
+    "country": "Dominica",
+    "AnnualWaterWithdrawalPerCapita_2022": 299.2847,
+    "AnnualWaterWithdrawal_2022": 20000000,
+    "AnnualFreshwaterWithdrawal_2022": 20000000
+  },
+  {
+    "flagCode": "TN",
+    "country": "Tunisia",
+    "AnnualWaterWithdrawalPerCapita_2022": 296.0064,
+    "AnnualWaterWithdrawal_2022": 3587400000,
+    "AnnualFreshwaterWithdrawal_2022": 3864000000
+  },
+  {
+    "flagCode": "BB",
+    "country": "Barbados",
+    "AnnualWaterWithdrawalPerCapita_2022": 286.9105,
+    "AnnualWaterWithdrawal_2022": 81000000,
+    "AnnualFreshwaterWithdrawal_2022": 70000000
+  },
+  {
+    "flagCode": "IL",
+    "country": "Israel",
+    "AnnualWaterWithdrawalPerCapita_2022": 286.1646,
+    "AnnualWaterWithdrawal_2022": 2605000000,
+    "AnnualFreshwaterWithdrawal_2022": 1503000000
+  },
+  {
+    "flagCode": "BH",
+    "country": "Bahrain",
+    "AnnualWaterWithdrawalPerCapita_2022": 283.2811,
+    "AnnualWaterWithdrawal_2022": 434400000,
+    "AnnualFreshwaterWithdrawal_2022": 155100000
+  },
+  {
+    "flagCode": "AL",
+    "country": "Albania",
+    "AnnualWaterWithdrawalPerCapita_2022": 281.8637,
+    "AnnualWaterWithdrawal_2022": 797000000,
+    "AnnualFreshwaterWithdrawal_2022": 797000000
+  },
+  {
+    "flagCode": "MA",
+    "country": "Morocco",
+    "AnnualWaterWithdrawalPerCapita_2022": 279.4337,
+    "AnnualWaterWithdrawal_2022": 10431000000,
+    "AnnualFreshwaterWithdrawal_2022": 10573000000
+  },
+  {
+    "flagCode": "MR",
+    "country": "Mauritania",
+    "AnnualWaterWithdrawalPerCapita_2022": 276.9279,
+    "AnnualWaterWithdrawal_2022": 1350200000,
+    "AnnualFreshwaterWithdrawal_2022": 1348200000
+  },
+  {
+    "flagCode": "PA",
+    "country": "Panama",
+    "AnnualWaterWithdrawalPerCapita_2022": 275.2698,
+    "AnnualWaterWithdrawal_2022": 1211400000,
+    "AnnualFreshwaterWithdrawal_2022": 1211400000
+  },
+  {
+    "flagCode": "KW",
+    "country": "Kuwait",
+    "AnnualWaterWithdrawalPerCapita_2022": 272.3602,
+    "AnnualWaterWithdrawal_2022": 1250000000,
+    "AnnualFreshwaterWithdrawal_2022": 770100000
+  },
+  {
+    "flagCode": "MD",
+    "country": "Moldova",
+    "AnnualWaterWithdrawalPerCapita_2022": 262.5013,
+    "AnnualWaterWithdrawal_2022": 798000000,
+    "AnnualFreshwaterWithdrawal_2022": 846000000
+  },
+  {
+    "flagCode": "AT",
+    "country": "Austria",
+    "AnnualWaterWithdrawalPerCapita_2022": 261.2735,
+    "AnnualWaterWithdrawal_2022": 2368360000,
+    "AnnualFreshwaterWithdrawal_2022": 3140000000
+  },
+  {
+    "flagCode": "HR",
+    "country": "Croatia",
+    "AnnualWaterWithdrawalPerCapita_2022": 260.0443,
+    "AnnualWaterWithdrawal_2022": 1016000000,
+    "AnnualFreshwaterWithdrawal_2022": 679000000
+  },
+  {
+    "flagCode": "PL",
+    "country": "Poland",
+    "AnnualWaterWithdrawalPerCapita_2022": 256.1686,
+    "AnnualWaterWithdrawal_2022": 9833220000,
+    "AnnualFreshwaterWithdrawal_2022": 9385000000
+  },
+  {
+    "flagCode": "TT",
+    "country": "Trinidad and Tobago",
+    "AnnualWaterWithdrawalPerCapita_2022": 256.1633,
+    "AnnualWaterWithdrawal_2022": 383200000,
+    "AnnualFreshwaterWithdrawal_2022": 336200000
+  },
+  {
+    "flagCode": "BZ",
+    "country": "Belize",
+    "AnnualWaterWithdrawalPerCapita_2022": 250.7865,
+    "AnnualWaterWithdrawal_2022": 101000000,
+    "AnnualFreshwaterWithdrawal_2022": 101000000
+  },
+  {
+    "flagCode": "DZ",
+    "country": "Algeria",
+    "AnnualWaterWithdrawalPerCapita_2022": 241.0209,
+    "AnnualWaterWithdrawal_2022": 10961000000,
+    "AnnualFreshwaterWithdrawal_2022": 10292000000
+  },
+  {
+    "flagCode": "LC",
+    "country": "Saint Lucia",
+    "AnnualWaterWithdrawalPerCapita_2022": 239.9584,
+    "AnnualWaterWithdrawal_2022": 42900000,
+    "AnnualFreshwaterWithdrawal_2022": 42900000
+  },
+  {
+    "flagCode": "ML",
+    "country": "Mali",
+    "AnnualWaterWithdrawalPerCapita_2022": 224.7684,
+    "AnnualWaterWithdrawal_2022": 5186000000,
+    "AnnualFreshwaterWithdrawal_2022": 5186000000
+  },
+  {
+    "flagCode": "CY",
+    "country": "Cyprus",
+    "AnnualWaterWithdrawalPerCapita_2022": 217.0696,
+    "AnnualWaterWithdrawal_2022": 289000000,
+    "AnnualFreshwaterWithdrawal_2022": 223000000
+  },
+  {
+    "flagCode": "BD",
+    "country": "Bangladesh",
+    "AnnualWaterWithdrawalPerCapita_2022": 211.7662,
+    "AnnualWaterWithdrawal_2022": 35870000000,
+    "AnnualFreshwaterWithdrawal_2022": 35870000000
+  },
+  {
+    "flagCode": "BN",
+    "country": "Brunei",
+    "AnnualWaterWithdrawalPerCapita_2022": 202.0335,
+    "AnnualWaterWithdrawal_2022": 92000000,
+    "AnnualFreshwaterWithdrawal_2022": 92000000
+  },
+  {
+    "flagCode": "SE",
+    "country": "Sweden",
+    "AnnualWaterWithdrawalPerCapita_2022": 197.1902,
+    "AnnualWaterWithdrawal_2022": 2068000000,
+    "AnnualFreshwaterWithdrawal_2022": 2483000000
+  },
+  {
+    "flagCode": "CH",
+    "country": "Switzerland",
+    "AnnualWaterWithdrawalPerCapita_2022": 197.0842,
+    "AnnualWaterWithdrawal_2022": 1732800000,
+    "AnnualFreshwaterWithdrawal_2022": 1704000000
+  },
+  {
+    "flagCode": "NI",
+    "country": "Nicaragua",
+    "AnnualWaterWithdrawalPerCapita_2022": 189.3754,
+    "AnnualWaterWithdrawal_2022": 1274620000,
+    "AnnualFreshwaterWithdrawal_2022": 1273020000
+  },
+  {
+    "flagCode": "GT",
+    "country": "Guatemala",
+    "AnnualWaterWithdrawalPerCapita_2022": 186.2462,
+    "AnnualWaterWithdrawal_2022": 3324100000,
+    "AnnualFreshwaterWithdrawal_2022": 3324100000
+  },
+  {
+    "flagCode": "SO",
+    "country": "Somalia",
+    "AnnualWaterWithdrawalPerCapita_2022": 185.2612,
+    "AnnualWaterWithdrawal_2022": 3298000000,
+    "AnnualFreshwaterWithdrawal_2022": 3298000000
+  },
+  {
+    "flagCode": "BO",
+    "country": "Bolivia",
+    "AnnualWaterWithdrawalPerCapita_2022": 182.5687,
+    "AnnualWaterWithdrawal_2022": 2204910000,
+    "AnnualFreshwaterWithdrawal_2022": 360086000
+  },
+  {
+    "flagCode": "ST",
+    "country": "Sao Tome and Principe",
+    "AnnualWaterWithdrawalPerCapita_2022": 180.7295,
+    "AnnualWaterWithdrawal_2022": 40900000,
+    "AnnualFreshwaterWithdrawal_2022": 40900000
+  },
+  {
+    "flagCode": "SN",
+    "country": "Senegal",
+    "AnnualWaterWithdrawalPerCapita_2022": 171.1563,
+    "AnnualWaterWithdrawal_2022": 3021098000,
+    "AnnualFreshwaterWithdrawal_2022": 3061600000
+  },
+  {
+    "flagCode": "ER",
+    "country": "Eritrea",
+    "AnnualWaterWithdrawalPerCapita_2022": 170.7022,
+    "AnnualWaterWithdrawal_2022": 582000000,
+    "AnnualFreshwaterWithdrawal_2022": 582000000
+  },
+  {
+    "flagCode": "JM",
+    "country": "Jamaica",
+    "AnnualWaterWithdrawalPerCapita_2022": 163.0165,
+    "AnnualWaterWithdrawal_2022": 462827000,
+    "AnnualFreshwaterWithdrawal_2022": 1340192000
+  },
+  {
+    "flagCode": "DK",
+    "country": "Denmark",
+    "AnnualWaterWithdrawalPerCapita_2022": 158.2865,
+    "AnnualWaterWithdrawal_2022": 934350000,
+    "AnnualFreshwaterWithdrawal_2022": 934350000
+  },
+  {
+    "flagCode": "MY",
+    "country": "Malaysia",
+    "AnnualWaterWithdrawalPerCapita_2022": 158.1762,
+    "AnnualWaterWithdrawal_2022": 5488000000,
+    "AnnualFreshwaterWithdrawal_2022": 6707000000
+  },
+  {
+    "flagCode": "BY",
+    "country": "Belarus",
+    "AnnualWaterWithdrawalPerCapita_2022": 154.1441,
+    "AnnualWaterWithdrawal_2022": 1414000000,
+    "AnnualFreshwaterWithdrawal_2022": 1414000000
+  },
+  {
+    "flagCode": "HN",
+    "country": "Honduras",
+    "AnnualWaterWithdrawalPerCapita_2022": 153.576,
+    "AnnualWaterWithdrawal_2022": 1607000000,
+    "AnnualFreshwaterWithdrawal_2022": 1607000000
+  },
+  {
+    "flagCode": "MN",
+    "country": "Mongolia",
+    "AnnualWaterWithdrawalPerCapita_2022": 136.5617,
+    "AnnualWaterWithdrawal_2022": 462400000,
+    "AnnualFreshwaterWithdrawal_2022": 462400000
+  },
+  {
+    "flagCode": "CZ",
+    "country": "Czechia",
+    "AnnualWaterWithdrawalPerCapita_2022": 135.4794,
+    "AnnualWaterWithdrawal_2022": 1446000000,
+    "AnnualFreshwaterWithdrawal_2022": 1445000000
+  },
+  {
+    "flagCode": "MC",
+    "country": "Monaco",
+    "AnnualWaterWithdrawalPerCapita_2022": 128.4324,
+    "AnnualWaterWithdrawal_2022": 5000000,
+    "AnnualFreshwaterWithdrawal_2022": 5000000
+  },
+  {
+    "flagCode": "KH",
+    "country": "Cambodia",
+    "AnnualWaterWithdrawalPerCapita_2022": 126.964,
+    "AnnualWaterWithdrawal_2022": 2184000000,
+    "AnnualFreshwaterWithdrawal_2022": 2184000000
+  },
+  {
+    "flagCode": "HT",
+    "country": "Haiti",
+    "AnnualWaterWithdrawalPerCapita_2022": 126.0474,
+    "AnnualWaterWithdrawal_2022": 1450000000,
+    "AnnualFreshwaterWithdrawal_2022": 1450000000
+  },
+  {
+    "flagCode": "AG",
+    "country": "Antigua and Barbuda",
+    "AnnualWaterWithdrawalPerCapita_2022": 123.869,
+    "AnnualWaterWithdrawal_2022": 11500000,
+    "AnnualFreshwaterWithdrawal_2022": 4400000
+  },
+  {
+    "flagCode": "GB",
+    "country": "United Kingdom",
+    "AnnualWaterWithdrawalPerCapita_2022": 123.4979,
+    "AnnualWaterWithdrawal_2022": 8420000000,
+    "AnnualFreshwaterWithdrawal_2022": 8419000000
+  },
+  {
+    "flagCode": "GD",
+    "country": "Grenada",
+    "AnnualWaterWithdrawalPerCapita_2022": 120.6025,
+    "AnnualWaterWithdrawal_2022": 14100000,
+    "AnnualFreshwaterWithdrawal_2022": 14100000
+  },
+  {
+    "flagCode": "UA",
+    "country": "Ukraine",
+    "AnnualWaterWithdrawalPerCapita_2022": 118.8562,
+    "AnnualWaterWithdrawal_2022": 4878900000,
+    "AnnualFreshwaterWithdrawal_2022": 4860900000
+  },
+  {
+    "flagCode": "MT",
+    "country": "Malta",
+    "AnnualWaterWithdrawalPerCapita_2022": 117.1075,
+    "AnnualWaterWithdrawal_2022": 61855000,
+    "AnnualFreshwaterWithdrawal_2022": 36663000
+  },
+  {
+    "flagCode": "SC",
+    "country": "Seychelles",
+    "AnnualWaterWithdrawalPerCapita_2022": 109.1442,
+    "AnnualWaterWithdrawal_2022": 13700000,
+    "AnnualFreshwaterWithdrawal_2022": 11294000
+  },
+  {
+    "flagCode": "LT",
+    "country": "Lithuania",
+    "AnnualWaterWithdrawalPerCapita_2022": 106.6271,
+    "AnnualWaterWithdrawal_2022": 300360000,
+    "AnnualFreshwaterWithdrawal_2022": 300360000
+  },
+  {
+    "flagCode": "SK",
+    "country": "Slovakia",
+    "AnnualWaterWithdrawalPerCapita_2022": 102.9788,
+    "AnnualWaterWithdrawal_2022": 563624000,
+    "AnnualFreshwaterWithdrawal_2022": 563624000
+  },
+  {
+    "flagCode": "NE",
+    "country": "Niger",
+    "AnnualWaterWithdrawalPerCapita_2022": 102.0587,
+    "AnnualWaterWithdrawal_2022": 2583308000,
+    "AnnualFreshwaterWithdrawal_2022": 2583308000
+  },
+  {
+    "flagCode": "JO",
+    "country": "Jordan",
+    "AnnualWaterWithdrawalPerCapita_2022": 98.15513,
+    "AnnualWaterWithdrawal_2022": 1104860000,
+    "AnnualFreshwaterWithdrawal_2022": 949870000
+  },
+  {
+    "flagCode": "NA",
+    "country": "Namibia",
+    "AnnualWaterWithdrawalPerCapita_2022": 97.30487,
+    "AnnualWaterWithdrawal_2022": 281178000,
+    "AnnualFreshwaterWithdrawal_2022": 102959000
+  },
+  {
+    "flagCode": "YE",
+    "country": "Yemen",
+    "AnnualWaterWithdrawalPerCapita_2022": 93.26875,
+    "AnnualWaterWithdrawal_2022": 3565000000,
+    "AnnualFreshwaterWithdrawal_2022": 3565000000
+  },
+  {
+    "flagCode": "FJ",
+    "country": "Fiji",
+    "AnnualWaterWithdrawalPerCapita_2022": 92.34062,
+    "AnnualWaterWithdrawal_2022": 84900000,
+    "AnnualFreshwaterWithdrawal_2022": 84900000
+  },
+  {
+    "flagCode": "LV",
+    "country": "Latvia",
+    "AnnualWaterWithdrawalPerCapita_2022": 91.61522,
+    "AnnualWaterWithdrawal_2022": 172334000,
+    "AnnualFreshwaterWithdrawal_2022": 172334000
+  },
+  {
+    "flagCode": "GW",
+    "country": "Guinea-Bissau",
+    "AnnualWaterWithdrawalPerCapita_2022": 90.23861,
+    "AnnualWaterWithdrawal_2022": 190000000,
+    "AnnualFreshwaterWithdrawal_2022": 175000000
+  },
+  {
+    "flagCode": "BW",
+    "country": "Botswana",
+    "AnnualWaterWithdrawalPerCapita_2022": 87.4151,
+    "AnnualWaterWithdrawal_2022": 213283000,
+    "AnnualFreshwaterWithdrawal_2022": 213256000
+  },
+  {
+    "flagCode": "ET",
+    "country": "Ethiopia",
+    "AnnualWaterWithdrawalPerCapita_2022": 84.12617,
+    "AnnualWaterWithdrawal_2022": 10548100000,
+    "AnnualFreshwaterWithdrawal_2022": 10548100000
+  },
+  {
+    "flagCode": "PS",
+    "country": "Palestine",
+    "AnnualWaterWithdrawalPerCapita_2022": 84.06735,
+    "AnnualWaterWithdrawal_2022": 446000000,
+    "AnnualFreshwaterWithdrawal_2022": 337300000
+  },
+  {
+    "flagCode": "VC",
+    "country": "Saint Vincent and the Grenadines",
+    "AnnualWaterWithdrawalPerCapita_2022": 83.31537,
+    "AnnualWaterWithdrawal_2022": 8502000,
+    "AnnualFreshwaterWithdrawal_2022": 7900000
+  },
+  {
+    "flagCode": "TZ",
+    "country": "Tanzania",
+    "AnnualWaterWithdrawalPerCapita_2022": 80.10901,
+    "AnnualWaterWithdrawal_2022": 5184000000,
+    "AnnualFreshwaterWithdrawal_2022": 5184000000
+  },
+  {
+    "flagCode": "ZM",
+    "country": "Zambia",
+    "AnnualWaterWithdrawalPerCapita_2022": 78.00351,
+    "AnnualWaterWithdrawal_2022": 1572000000,
+    "AnnualFreshwaterWithdrawal_2022": 1572000000
+  },
+  {
+    "flagCode": "KE",
+    "country": "Kenya",
+    "AnnualWaterWithdrawalPerCapita_2022": 74.31921,
+    "AnnualWaterWithdrawal_2022": 4032000000,
+    "AnnualFreshwaterWithdrawal_2022": 4032000000
+  },
+  {
+    "flagCode": "LU",
+    "country": "Luxembourg",
+    "AnnualWaterWithdrawalPerCapita_2022": 73.0737,
+    "AnnualWaterWithdrawal_2022": 47740000,
+    "AnnualFreshwaterWithdrawal_2022": 47740000
+  },
+  {
+    "flagCode": "MW",
+    "country": "Malawi",
+    "AnnualWaterWithdrawalPerCapita_2022": 65.96422,
+    "AnnualWaterWithdrawal_2022": 1356800000,
+    "AnnualFreshwaterWithdrawal_2022": 1356800000
+  },
+  {
+    "flagCode": "SG",
+    "country": "Singapore",
+    "AnnualWaterWithdrawalPerCapita_2022": 63.86525,
+    "AnnualWaterWithdrawal_2022": 360831000,
+    "AnnualFreshwaterWithdrawal_2022": 199531000
+  },
+  {
+    "flagCode": "GN",
+    "country": "Guinea",
+    "AnnualWaterWithdrawalPerCapita_2022": 63.32204,
+    "AnnualWaterWithdrawal_2022": 890000000,
+    "AnnualFreshwaterWithdrawal_2022": 890000000
+  },
+  {
+    "flagCode": "SS",
+    "country": "South Sudan",
+    "AnnualWaterWithdrawalPerCapita_2022": 59.70324,
+    "AnnualWaterWithdrawal_2022": 658000000,
+    "AnnualFreshwaterWithdrawal_2022": 658000000
+  },
+  {
+    "flagCode": "GA",
+    "country": "Gabon",
+    "AnnualWaterWithdrawalPerCapita_2022": 57.22521,
+    "AnnualWaterWithdrawal_2022": 139100000,
+    "AnnualFreshwaterWithdrawal_2022": 139100000
+  },
+  {
+    "flagCode": "NG",
+    "country": "Nigeria",
+    "AnnualWaterWithdrawalPerCapita_2022": 55.90388,
+    "AnnualWaterWithdrawal_2022": 12475000000,
+    "AnnualFreshwaterWithdrawal_2022": 12472000000
+  },
+  {
+    "flagCode": "TD",
+    "country": "Chad",
+    "AnnualWaterWithdrawalPerCapita_2022": 47.66106,
+    "AnnualWaterWithdrawal_2022": 879600000,
+    "AnnualFreshwaterWithdrawal_2022": 879600000
+  },
+  {
+    "flagCode": "MZ",
+    "country": "Mozambique",
+    "AnnualWaterWithdrawalPerCapita_2022": 45.10623,
+    "AnnualWaterWithdrawal_2022": 1473000000,
+    "AnnualFreshwaterWithdrawal_2022": 1473000000
+  },
+  {
+    "flagCode": "GH",
+    "country": "Ghana",
+    "AnnualWaterWithdrawalPerCapita_2022": 44.18213,
+    "AnnualWaterWithdrawal_2022": 1464600000,
+    "AnnualFreshwaterWithdrawal_2022": 1448600000
+  },
+  {
+    "flagCode": "RW",
+    "country": "Rwanda",
+    "AnnualWaterWithdrawalPerCapita_2022": 44.02598,
+    "AnnualWaterWithdrawal_2022": 601000000,
+    "AnnualFreshwaterWithdrawal_2022": 610000000
+  },
+  {
+    "flagCode": "CM",
+    "country": "Cameroon",
+    "AnnualWaterWithdrawalPerCapita_2022": 39.38802,
+    "AnnualWaterWithdrawal_2022": 1088400000,
+    "AnnualFreshwaterWithdrawal_2022": 1088400000
+  },
+  {
+    "flagCode": "GM",
+    "country": "Gambia",
+    "AnnualWaterWithdrawalPerCapita_2022": 38.53638,
+    "AnnualWaterWithdrawal_2022": 101600000,
+    "AnnualFreshwaterWithdrawal_2022": 101600000
+  },
+  {
+    "flagCode": "PG",
+    "country": "Papua New Guinea",
+    "AnnualWaterWithdrawalPerCapita_2022": 38.42924,
+    "AnnualWaterWithdrawal_2022": 392100000,
+    "AnnualFreshwaterWithdrawal_2022": 392100000
+  },
+  {
+    "flagCode": "CI",
+    "country": "Ivory Coast",
+    "AnnualWaterWithdrawalPerCapita_2022": 38.22997,
+    "AnnualWaterWithdrawal_2022": 1162000000,
+    "AnnualFreshwaterWithdrawal_2022": 1162000000
+  },
+  {
+    "flagCode": "BF",
+    "country": "Burkina Faso",
+    "AnnualWaterWithdrawalPerCapita_2022": 36.34096,
+    "AnnualWaterWithdrawal_2022": 818000000,
+    "AnnualFreshwaterWithdrawal_2022": 818000000
+  },
+  {
+    "flagCode": "LR",
+    "country": "Liberia",
+    "AnnualWaterWithdrawalPerCapita_2022": 27.1528,
+    "AnnualWaterWithdrawal_2022": 145900000,
+    "AnnualFreshwaterWithdrawal_2022": 145900000
+  },
+  {
+    "flagCode": "SL",
+    "country": "Sierra Leone",
+    "AnnualWaterWithdrawalPerCapita_2022": 25.63791,
+    "AnnualWaterWithdrawal_2022": 212200000,
+    "AnnualFreshwaterWithdrawal_2022": 212200000
+  },
+  {
+    "flagCode": "TG",
+    "country": "Togo",
+    "AnnualWaterWithdrawalPerCapita_2022": 24.53316,
+    "AnnualWaterWithdrawal_2022": 223000000,
+    "AnnualFreshwaterWithdrawal_2022": 223000000
+  },
+  {
+    "flagCode": "BI",
+    "country": "Burundi",
+    "AnnualWaterWithdrawalPerCapita_2022": 21.0268,
+    "AnnualWaterWithdrawal_2022": 280100000,
+    "AnnualFreshwaterWithdrawal_2022": 280100000
+  },
+  {
+    "flagCode": "AO",
+    "country": "Angola",
+    "AnnualWaterWithdrawalPerCapita_2022": 19.80635,
+    "AnnualWaterWithdrawal_2022": 705800000,
+    "AnnualFreshwaterWithdrawal_2022": 705700000
+  },
+  {
+    "flagCode": "LS",
+    "country": "Lesotho",
+    "AnnualWaterWithdrawalPerCapita_2022": 19.15918,
+    "AnnualWaterWithdrawal_2022": 43800000,
+    "AnnualFreshwaterWithdrawal_2022": 43800000
+  },
+  {
+    "flagCode": "BJ",
+    "country": "Benin",
+    "AnnualWaterWithdrawalPerCapita_2022": 17.00643,
+    "AnnualWaterWithdrawal_2022": 234000000,
+    "AnnualFreshwaterWithdrawal_2022": 130000000
+  },
+  {
+    "flagCode": "DJ",
+    "country": "Djibouti",
+    "AnnualWaterWithdrawalPerCapita_2022": 16.70923,
+    "AnnualWaterWithdrawal_2022": 19000000,
+    "AnnualFreshwaterWithdrawal_2022": 19000000
+  },
+  {
+    "flagCode": "CG",
+    "country": "Republic of the Congo",
+    "AnnualWaterWithdrawalPerCapita_2022": 15.19444,
+    "AnnualWaterWithdrawal_2022": 91700000,
+    "AnnualFreshwaterWithdrawal_2022": 46000000
+  },
+  {
+    "flagCode": "CF",
+    "country": "Central African Republic",
+    "AnnualWaterWithdrawalPerCapita_2022": 14.22115,
+    "AnnualWaterWithdrawal_2022": 72500000,
+    "AnnualFreshwaterWithdrawal_2022": 72500000
+  },
+  {
+    "flagCode": "UG",
+    "country": "Uganda",
+    "AnnualWaterWithdrawalPerCapita_2022": 13.46361,
+    "AnnualWaterWithdrawal_2022": 637000000,
+    "AnnualFreshwaterWithdrawal_2022": 637000000
+  },
+  {
+    "flagCode": "KM",
+    "country": "Comoros",
+    "AnnualWaterWithdrawalPerCapita_2022": 11.98771,
+    "AnnualWaterWithdrawal_2022": 10000000,
+    "AnnualFreshwaterWithdrawal_2022": 10000000
+  },
+  {
+    "flagCode": "MV",
+    "country": "Maldives",
+    "AnnualWaterWithdrawalPerCapita_2022": 11.25726,
+    "AnnualWaterWithdrawal_2022": 5900000,
+    "AnnualFreshwaterWithdrawal_2022": 4700000
+  },
+  {
+    "flagCode": "GQ",
+    "country": "Equatorial Guinea",
+    "AnnualWaterWithdrawalPerCapita_2022": 10.97838,
+    "AnnualWaterWithdrawal_2022": 19800000,
+    "AnnualFreshwaterWithdrawal_2022": 19800000
+  },
+  {
+    "flagCode": "CD",
+    "country": "DR Congo",
+    "AnnualWaterWithdrawalPerCapita_2022": 6.67598,
+    "AnnualWaterWithdrawal_2022": 683600000,
+    "AnnualFreshwaterWithdrawal_2022": 683600000
+  },
+  {
+    "flagCode": "BA",
+    "country": "Bosnia and Herzegovina",
+    "AnnualWaterWithdrawalPerCapita_2022": null,
+    "AnnualWaterWithdrawal_2022": null,
+    "AnnualFreshwaterWithdrawal_2022": 312035000
+  }
+]
