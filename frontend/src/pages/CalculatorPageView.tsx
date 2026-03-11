@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Slider } from "../component/Slider/Slider";
+import { Slider } from "../component/CalculatorComponents/CalculatorSlider";
 import { WaterDropLogo } from "../component/CalculatorComponents/WaterDropLogo";
 import { SliderFactPopup } from "../component/CalculatorComponents/SliderFactPopup";
 import { Header } from "../component/Header/Header";
@@ -15,6 +15,11 @@ export const CalculatorPage = () => {
 
     const LITERS_PER_SHOWER_MINUTE = 8;
     const LITERS_PER_FLUSH = 4.5;
+    const LITERS_PER_LAUNDRY_LOAD = 45;
+    const LITERS_PER_DISHWASHER_CYCLE = 10;
+    const LITERS_PER_MEAT_SERVING = 1700;
+    const LITERS_PER_COFFEE_CUP = 140;
+    const LITERS_PER_CLOTHING_ITEM = 2700;
 
     useEffect(() => {
         void loadInitial();
@@ -44,10 +49,54 @@ export const CalculatorPage = () => {
         });
     };
 
+    const showLaundryTip = (loads: number) => {
+        const liters = loads * LITERS_PER_LAUNDRY_LOAD;
+        setTip({
+            title: "Laundry insight",
+            fact: "A modern washing machine uses around 45 liters per load.",
+            calculation: `${loads} loads x ${LITERS_PER_LAUNDRY_LOAD} L = ${liters} L per week`,
+        });
+    };
+
+    const showDishwasherTip = (cycles: number) => {
+        const liters = cycles * LITERS_PER_DISHWASHER_CYCLE;
+        setTip({
+            title: "Dishwasher insight",
+            fact: "A dishwasher uses less water than washing by hand — about 10 liters per cycle.",
+            calculation: `${cycles} cycles x ${LITERS_PER_DISHWASHER_CYCLE} L = ${liters} L per week`,
+        });
+    };
+
+    const showMeatTip = (servings: number) => {
+        const liters = Math.round((servings * LITERS_PER_MEAT_SERVING) / 7);
+        setTip({
+            title: "Meat insight",
+            fact: "Producing 1 serving of meat requires around 1,700 L of virtual water on average.",
+            calculation: `${servings} servings x ${LITERS_PER_MEAT_SERVING} L / 7 = ${liters} L/day`,
+        });
+    };
+
+    const showCoffeeTip = (cups: number) => {
+        const liters = cups * LITERS_PER_COFFEE_CUP;
+        setTip({
+            title: "Coffee insight",
+            fact: "Growing and processing coffee beans takes about 140 liters per cup.",
+            calculation: `${cups} cups x ${LITERS_PER_COFFEE_CUP} L = ${liters} L/day`,
+        });
+    };
+
+    const showClothesTip = (items: number) => {
+        const liters = Math.round((items * LITERS_PER_CLOTHING_ITEM) / 30);
+        setTip({
+            title: "Clothing insight",
+            fact: "A single cotton garment takes around 2,700 liters of water to produce.",
+            calculation: `${items} items x ${LITERS_PER_CLOTHING_ITEM} L / 30 = ${liters} L/day`,
+        });
+    };
+
     return (
         <>
-            <Header />
-            <main className="mx-auto min-h-screen w-full max-w-sm bg-slate-50 px-4 pb-24 pt-4">
+            <main className="mx-auto min-h-screen w-full max-w-sm px-4 pb-24 pt-4">
                 <section className="space-y-4">
                     <WaterDropLogo title="Total" Subtext="Liters of water per day" value={totalLitersPerDay} />
 
@@ -59,29 +108,29 @@ export const CalculatorPage = () => {
                         <Description className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700" text={error} />
                     )}
 
-                    <div className="space-y-4 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
+                    <div className="space-y-4">
                         <Slider
-                            title="How many people in your household"
-                            subText="people in house"
+                            title="Number of people in your household"
+                            subText="Number of people"
                             value={form.householdMembers}
                             onChange={(value) => setField("householdMembers", value)}
                             min={1}
-                            max={6}
+                            max={10}
                         />
 
                         <Slider
                             title="Shower Time"
-                            subText="minutes"
+                            subText="Shower minutes"
                             value={form.showerMinutesPerDay}
                             onChange={(value) => setField("showerMinutesPerDay", value)}
                             onCommit={showShowerTip}
                             min={0}
-                            max={30}
+                            max={60}
                         />
 
                         <Slider
                             title="Toilet Flushes"
-                            subText="flushes per day"
+                            subText="Toilet flushes per day"
                             value={form.toiletFlushesPerDay}
                             onChange={(value) => setField("toiletFlushesPerDay", value)}
                             onCommit={showToiletTip}
@@ -91,27 +140,59 @@ export const CalculatorPage = () => {
 
                         <Slider
                             title="Laundry Loads"
-                            subText="loads per week"
+                            subText="Loads per week"
                             value={form.laundryPerWeek}
                             onChange={(value) => setField("laundryPerWeek", value)}
+                            onCommit={showLaundryTip}
                             min={0}
                             max={10}
                         />
 
                         <Slider
                             title="Dishwasher Cycles"
-                            subText="cycles per week"
+                            subText="Cycles per week"
                             value={form.dishwasherPerWeek}
                             onChange={(value) => setField("dishwasherPerWeek", value)}
+                            onCommit={showDishwasherTip}
                             min={0}
                             max={10}
+                        />
+
+                        <Slider
+                            title="Meat servings"
+                            subText="Servings per week"
+                            value={form.meatServingsPerWeek}
+                            onChange={(value) => setField("meatServingsPerWeek", value)}
+                            onCommit={showMeatTip}
+                            min={0}
+                            max={20}
+                        />
+
+                        <Slider
+                            title="Coffee cups"
+                            subText="Cups per Day"
+                            value={form.coffeeCupsPerDay}
+                            onChange={(value) => setField("coffeeCupsPerDay", value)}
+                            onCommit={showCoffeeTip}
+                            min={0}
+                            max={10}
+                        />
+
+                        <Slider
+                            title="New clothes"
+                            subText="Items per month"
+                            value={form.clothesPurchasedPerMonth}
+                            onChange={(value) => setField("clothesPurchasedPerMonth", value)}
+                            onCommit={showClothesTip}
+                            min={0}
+                            max={30}
                         />
 
                         <button
                             type="button"
                             onClick={() => void save()}
                             disabled={loading || saving}
-                            className="w-full rounded-xl bg-sky-600 px-4 py-3 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:bg-sky-300"
+                            className="w-full rounded-xl bg-primary px-4 py-3 text-[16px] font-nunito font-semibold text-black disabled:cursor-not-allowed hover:bg-medium"
                         >
                             {saving ? "Saving..." : "Save calculation"}
                         </button>

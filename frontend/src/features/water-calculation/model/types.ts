@@ -5,7 +5,7 @@ export type CalculatorFormState = {
     laundryPerWeek: number;
     dishwasherPerWeek: number;
     meatServingsPerWeek: number;
-    coffeeCupsPerWeek: number;
+    coffeeCupsPerDay: number;
     clothesPurchasedPerMonth: number;
     digitalServicesHoursPerDay: number;
 };
