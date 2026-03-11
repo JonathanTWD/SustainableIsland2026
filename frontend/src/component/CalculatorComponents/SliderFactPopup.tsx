@@ -1,3 +1,5 @@
+import { Description } from "../SubText/Description";
+
 interface SliderFactPopupProps {
     title: string;
     fact: string;

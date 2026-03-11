@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import { Slider } from "../component/CalculatorComponents/CalculatorSlider";
+import { Slider } from "../component/Slider/Slider";
 import { WaterDropLogo } from "../component/CalculatorComponents/WaterDropLogo";
 import { SliderFactPopup } from "../component/CalculatorComponents/SliderFactPopup";
+import { Header } from "../component/Header/Header";
 
 type TipData = {
     title: string;
@@ -52,7 +53,7 @@ export const CalculatorPage = () => {
         setTip({
             title: "Shower insight",
             fact: "Average shower length is around 8 minutes.",
-            calculation: `${minutes} min × ${LITERS_PER_SHOWER_MINUTE} L/min = ${liters} L per shower`
+            calculation: `${minutes} min x ${LITERS_PER_SHOWER_MINUTE} L/min = ${liters} L per shower`
         });
     };
 
@@ -60,35 +61,35 @@ export const CalculatorPage = () => {
         const liters = flushes * LITERS_PER_FLUSH;
         setTip({
             title: "Toilet insight",
-            fact: "Modern toilets often use around 3–6 liters per flush.",
-            calculation: `${flushes} flushes × ${LITERS_PER_FLUSH} L = ${liters.toFixed(1)} L per person/day`
+            fact: "Modern toilets often use around 3-6 liters per flush.",
+            calculation: `${flushes} flushes x ${LITERS_PER_FLUSH} L = ${liters.toFixed(1)} L per person/day`
         });
     };
 
     return (
-        <main className="mx-6 mt-10 flex flex-col gap-8">
-            <section className="space-y-4">
-                <WaterDropLogo title="Total" Subtext="Liters of water per day" value={totalLitersPerDay} />
-                <div className="space-y-4 sm:mx-[15%] lg:mx-[30%]">
-                    <Slider title="Number of people in your household" subText="Number of people" value={people} onChange={setPeople} min={1} max={12} />
-                    <Slider title="Shower Time" subText="Minutes per day" value={showerMinutes} onChange={setShowerMinutes} onCommit={showShowerTip} min={0} max={60} />
-                    <Slider title="Toilet Flushes" subText="Flushes per day" value={toiletFlushes} onChange={setToiletFlushes} onCommit={showToiletTip} min={0} max={20} />
-                    <Slider title="Laundry Loads" subText="Loads per week" value={laundryLoads} onChange={setLaundryLoads} min={0} max={10} />
-                    <Slider title="Dishwasher Cycles" subText="Cycles per week" value={dishwasherCycles} onChange={setDishwasherCycles} min={0} max={10} />
-                    <Slider title="Meat Servings" subText="Servings per week" value={meatServing} onChange={setMeatServing} min={0} max={20} />
-                    <Slider title="Coffee Cups" subText="Cups per day" value={coffeeCups} onChange={setCoffeeCups} min={0} max={10} />
-                    <Slider title="New Clothes" subText="Items per month" value={newClothes} onChange={setNewClothes} min={0} max={20} />
-                </div>
-            </section>
+        <>
+        <Header />
+            <main className="mx-auto min-h-screen w-full max-w-sm bg-slate-50 px-4 pt-4 pb-24">
+                <section className="space-y-4">
+                    <WaterDropLogo title="Total" Subtext="Liters of water per day" value={totalLitersPerDay} />
+                    <div className="space-y-4 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
+                        <Slider title="How many people in your household" subText="people in house" value={people} onChange={setPeople} min={1} max={6} />
+                        <Slider title="Shower Time" subText="minutes" value={showerMinutes} onChange={setShowerMinutes} onCommit={showShowerTip} min={0} max={30} />
+                        <Slider title="Toilet Flushes" subText="flushes per day" value={toiletFlushes} onChange={setToiletFlushes} onCommit={showToiletTip} min={0} max={20} />
+                        <Slider title="Laundry Loads" subText="loads per week" value={laundryLoads} onChange={setLaundryLoads} min={0} max={10} />
+                        <Slider title="Dishwasher Cycles" subText="cycles per week" value={dishwasherCycles} onChange={setDishwasherCycles} min={0} max={10} />
+                    </div>
+                </section>
 
-            {tip && (
-                <SliderFactPopup
-                    title={tip.title}
-                    fact={tip.fact}
-                    calculation={tip.calculation}
-                    onClose={() => setTip(null)}
-                />
-            )}
-        </main>
+                {tip && (
+                    <SliderFactPopup
+                        title={tip.title}
+                        fact={tip.fact}
+                        calculation={tip.calculation}
+                        onClose={() => setTip(null)}
+                    />
+                )}
+            </main>
+        </>
     );
 };

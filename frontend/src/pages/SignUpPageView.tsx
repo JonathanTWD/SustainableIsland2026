@@ -1,4 +1,5 @@
-import Button from "../component/LoginSignInComponents/Button";
+import { Button } from "../component/Button/Button";
+import { Header } from "../component/Header/Header";
 import InputField from "../component/LoginSignInComponents/InputField";
 import ToggleSwitch from "../component/LoginSignInComponents/ToggleSwitch";
 
@@ -8,14 +9,12 @@ const SignupPage = () => {
         <>
             <div className="px-6 py-15 flex flex-col gap-12">
                 {/* Welcome banner */}
-                <h1 className="text-[#0A302F] font-kalam font-bold text-[40px]">
-                    Welcome
-                </h1>
+                <Header title="Welcome" />
 
                 {/* Input fields */}
                 <div className="flex flex-col gap-6">
                     <div className="flex justify-center">
-                        <span className="text-[#0A302F] font-nunito text-[24px] font-bold ">
+                        <span className="text-secondary font-nunito text-[24px] font-bold ">
                             Create account
                         </span>
                     </div>
@@ -29,11 +28,11 @@ const SignupPage = () => {
                     <Button text="Sign up" onClick={() => { }}
                     />
                     <div className="flex items-center gap-5 my-2.5">
-                        <div className="grow border-t border-[#0A302F] "></div>
-                        <span className="text-[#0A302F] font-kalam text-[20px]">
+                        <div className="grow border-t border-secondary "></div>
+                        <span className="text-secondary font-kalam text-[20px]">
                             Or
                         </span>
-                        <div className="grow border-t border-[#0A302F]"></div>
+                        <div className="grow border-t border-secondary"></div>
                     </div>
                     <Button text="Log in" onClick={() => { }}
                     />
@@ -41,7 +40,7 @@ const SignupPage = () => {
 
                 {/* Dark mode Toggle */}
                 <div className="flex flex-col w-full items-center">
-                    <span className="font-nunito text-[16px] text-[#0A302F] font-medium">
+                    <span className="font-nunito text-[16px] text-secondary font-medium">
                         Dark mode
                     </span>
                     <ToggleSwitch />

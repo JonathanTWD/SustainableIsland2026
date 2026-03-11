@@ -1,9 +1,9 @@
 import { useState } from "react";
 import WaterChart from "../component/ProfileComponents/ProfileGraph";
-import { ProfileHeader } from "../component/ProfileComponents/ProfileHeader";
 import { ProfileTextGraph } from "../component/ProfileComponents/ProfileTextGraph";
 import { ProfileDropDown } from "../component/ProfileComponents/DropDown";
 import { ProfileContact } from "../component/ProfileComponents/ProfileContact";
+import { Header } from "../component/Header/Header";
 
 const waterData = [
     { name: "Shower", value: 40, fill: "#3b82f6" },
@@ -24,12 +24,12 @@ export const ProfilePage = () => {
 
     const handleMenuSelect = (itemId: string) => {
         console.log("Selected:", itemId);
-        setIsMenuOpen(false); // luk menu efter klik
+        setIsMenuOpen(false); // close menu after selection
     };
 
     return (
         <>
-            <ProfileHeader onMenuClick={handleMenuToggle} isMenuOpen={isMenuOpen} />
+            <Header onMenuClick={handleMenuToggle} isMenuOpen={isMenuOpen} />
             <ProfileDropDown
                 isOpen={isMenuOpen}
                 items={menuItems}

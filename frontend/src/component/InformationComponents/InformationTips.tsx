@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { Description } from "../SubText/Description";
 
 interface Tip {
     id: string;
@@ -34,7 +35,7 @@ export const InformationTips = () => {
                 {tipsToShow.map((tip) => (
                     <article key={tip.id} >
                         <h3 >{tip.title}</h3>
-                        <p >{tip.description}</p>
+                        <Description text={tip.description} />
                     </article>
                 ))}
             </div>

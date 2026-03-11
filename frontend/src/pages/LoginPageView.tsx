@@ -1,4 +1,5 @@
-import Button from "../component/LoginSignInComponents/Button";
+import { Header } from "../component/Header/Header";
+import {Button} from "../component/Button/Button";
 import InputField from "../component/LoginSignInComponents/InputField";
 import ToggleSwitch from "../component/LoginSignInComponents/ToggleSwitch";
 
@@ -8,9 +9,7 @@ const LoginPage = () => {
         <>
         <div className="px-6 py-15 flex flex-col gap-12">
             {/* Welcome banner */}
-            <h1 className="text-secondary font-kalam font-bold text-[40px]">
-                Welcome
-            </h1>
+           <Header title="Welcome" />
 
             {/* Input fields */}
             <div className="flex flex-col gap-6">
@@ -23,11 +22,11 @@ const LoginPage = () => {
                 <Button text="Log in" onClick={() => {}} 
                     />
                 <div className="flex items-center gap-5 my-2.5">
-                    <div className="grow border-t border-secondary "></div>
+                    <div className="grow border-t border-secondary "/>
                     <span className="text-secondary font-kalam text-[20px]">
                         Or
                     </span>
-                    <div className="grow border-t border-secondary"></div>
+                    <div className="grow border-t border-secondary"/>
                 </div>
                 <Button text="Sign Up" onClick={() => {}} 
                     />
