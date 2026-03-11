@@ -18,7 +18,7 @@ export function Input(props: WaterCalcProps) {
 
     return (
         <>
-            <p className="text-black">{props.title}</p>
+            <Description text={props.title || ''} className="text-black" />
             <input
                 type="range"
                 min={props.min}
@@ -39,7 +39,7 @@ export function Input(props: WaterCalcProps) {
                     background: `linear-gradient(to right, #1AD0CD ${percentage}%, #ffffff ${percentage}%)`
                 }}
             />
-            <p className="text-black flex justify-between">
+            <div className="text-black flex justify-between">
                 {Array.from({ length: 6 }, (_, i) => {
                     const value = props.min + i * ((props.max - props.min) / 5)
                     return (
@@ -48,9 +48,9 @@ export function Input(props: WaterCalcProps) {
                         </span>
                     )
                 })}
-            </p>
+            </div>
             <Description text={props.text || '\u00A0'} className="text-black text-right" />
-            
+
         </>
     )
 }
