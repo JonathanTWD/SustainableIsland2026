@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express, { Request, Response } from "express";
+import cors from "cors";
 import { checkDatabaseConnection } from "./config/db";
 import authRoutes from "./routes/auth.routes";
 import userRoutes from "./routes/user.routes";
@@ -9,6 +10,11 @@ import savingGoalRoutes from "./routes/saving-goal.routes";
 
 const app = express();
 const PORT = Number(process.env.PORT);
+
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+}));
 
 app.use(express.json());
 
