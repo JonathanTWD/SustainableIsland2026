@@ -13,9 +13,11 @@ export const Slider = (props: WaterSliderProps) => {
         props.onCommit?.(props.value);
     };
 
+    const progress = ((props.value - props.min) / (props.max - props.min)) * 100;
+
     return (
         <div className="space-y-1">
-            <p className="text-sm font-medium text-gray-800">{props.title}</p>
+            <p className="text-[16px] font-nunito font-medium">{props.title}</p>
             <input
                 type="range"
                 min={props.min}
@@ -25,10 +27,11 @@ export const Slider = (props: WaterSliderProps) => {
                 onMouseUp={handleCommit}
                 onTouchEnd={handleCommit}
                 onBlur={handleCommit}
-                className="slider w-full accent-blue-600"
+                className="slider w-full"
+                style={{ '--progress': `${progress}` } as React.CSSProperties}
             />
-            <p className="text-sm text-gray-600">
-                {props.subText}: <span className="font-semibold text-gray-900">{props.value}</span>
+            <p className="text-sm font-nunito font-medium text-secondary">
+                {props.subText}: <span>{props.value}</span>
             </p>
         </div>
     );
