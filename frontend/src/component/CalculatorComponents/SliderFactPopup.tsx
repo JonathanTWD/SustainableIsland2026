@@ -21,8 +21,8 @@ export const SliderFactPopup = ({ title, fact, calculation, onClose }: SliderFac
                 </button>
             </div>
 
-            <p className="mt-2 mb-1 font-nunito text-sm text-secondary">{fact}</p>
-            <p className="text-sm font-nunito font-semibold text-secondary">{calculation}</p>
+            <Description className="mt-2 mb-1 text-sm text-secondary" text={fact} />
+            <Description className="text-sm font-semibold text-secondary" text={calculation} />
         </div>
     );
 };

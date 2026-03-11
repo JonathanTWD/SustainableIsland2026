@@ -1,3 +1,5 @@
+import { Description } from "../SubText/Description";
+
 interface WaterSliderProps {
     value: number;
     onChange: (value: number) => void;
@@ -17,7 +19,7 @@ export const Slider = (props: WaterSliderProps) => {
 
     return (
         <div className="space-y-1">
-            <p className="text-[16px] font-nunito font-medium">{props.title}</p>
+            <Description className="text-[16px] font-medium" text={props.title || ""} />
             <input
                 type="range"
                 min={props.min}
@@ -30,9 +32,7 @@ export const Slider = (props: WaterSliderProps) => {
                 className="slider w-full"
                 style={{ '--progress': `${progress}` } as React.CSSProperties}
             />
-            <p className="text-sm font-nunito font-medium text-secondary">
-                {props.subText}: <span>{props.value}</span>
-            </p>
+            <Description className="text-sm font-medium text-secondary" text={`${props.subText || ""}: ${props.value}`} />
         </div>
     );
 };
