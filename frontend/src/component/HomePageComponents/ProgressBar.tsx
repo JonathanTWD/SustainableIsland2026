@@ -3,7 +3,7 @@ interface ProgressBarProps {
     percentage?: number;
 }
 
-const ProgressBar = ({ percentage = 10 }: ProgressBarProps) => {
+const ProgressBar = ({ percentage = 0 }: ProgressBarProps) => {
     return (
         <div className="relative w-full">
             <div className="w-full h-2 bg-primary rounded-full relative">
