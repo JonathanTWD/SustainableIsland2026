@@ -1,4 +1,5 @@
 import type { WaterItem } from '../../types/WaterItem';
+import { Description } from '../SubText/Description';
 
 type Props = {
     data: WaterItem[];
@@ -10,9 +11,7 @@ export const ProfileTextGraph = ({ data }: Props) => {
     return (
         <div>
             {topThree.map((item) => (
-                <p key={item.name}>
-                    {item.value}% | {item.name}
-                </p>
+                <Description key={item.name} text={`${item.value} L | ${item.name}`} />
             ))}
         </div>
     );
