@@ -40,7 +40,7 @@ export const useWaterCalculation = () => {
             const records = await waterCalculationService.getByUserId(currentUserId);
 
             if (records.length > 0) {
-                const latest = records[0]; // backend sender desc på created_at
+                const latest = records[0]; // backend sender desc by created_at
                 setRecordId(latest.id);
                 setForm(fromApiToForm(latest));
             } else {
