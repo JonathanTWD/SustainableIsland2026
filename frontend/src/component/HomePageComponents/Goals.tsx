@@ -1,24 +1,27 @@
 import { useEffect, useState } from "react";
 import { metricsService } from "../../services/metrics.service";
+import { userService } from "../../services/user.service";
 import { Description } from "../SubText/Description";
 import ProgressBar from "./ProgressBar";
 
-interface GoalsProps {
-  Users?: number;
-}
 
-const Goals = ({ Users }: GoalsProps) => {
+const Goals = () => {
 
   const [waterSavedToday, setWaterSavedToday] = useState("0");
   const [waterSavedTotal, setWaterSavedTotal] = useState("0");
-  const [goals, setGoals] = useState("1.000.000");
+  const [users, setUsers] = useState("0")
+  const goals = "1.000.000"
 
   useEffect(() => {
     const fetchMetrics = async () => {
       try {
         const metrics = await metricsService.getTotalSaved();
+        const users = await userService.getUserCount();
+
         setWaterSavedToday(metrics.saved_today_liters.toLocaleString());
         setWaterSavedTotal(metrics.saved_year_liters.toLocaleString());
+        setUsers(users.count.toLocaleString());
+
       } catch (error) {
         console.error("Something went wrong:", error);
       }
@@ -38,7 +41,7 @@ const Goals = ({ Users }: GoalsProps) => {
             text={`${waterSavedTotal} L / ${goals} L  of water saved in 2026`}
           />
           <ProgressBar />
-          <Description text={`${Users} people are saving water right now.`} />
+          <Description className="mt-15" text={`${users} people are saving water right now.`} />
         </div>
       </div>
     </>
