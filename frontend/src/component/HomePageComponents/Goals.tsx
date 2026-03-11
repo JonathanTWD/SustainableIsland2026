@@ -9,8 +9,10 @@ const Goals = () => {
 
   const [waterSavedToday, setWaterSavedToday] = useState("0");
   const [waterSavedTotal, setWaterSavedTotal] = useState("0");
-  const [users, setUsers] = useState("0")
-  const goals = "1.000.000"
+  const [users, setUsers] = useState("0");
+  const [progressPercentage, setProgressPercentage] = useState(0);
+  const goalTarget = 1000000;
+  const goals = goalTarget.toLocaleString();
 
   useEffect(() => {
     const fetchMetrics = async () => {
@@ -22,6 +24,8 @@ const Goals = () => {
         setWaterSavedTotal(metrics.saved_year_liters.toLocaleString());
         setUsers(users.count.toLocaleString());
 
+        const percentage = Math.min((metrics.saved_year_liters / goalTarget) * 100, 100);
+        setProgressPercentage(Number(percentage.toFixed(1)));
       } catch (error) {
         console.error("Something went wrong:", error);
       }
@@ -40,7 +44,7 @@ const Goals = () => {
           <Description
             text={`${waterSavedTotal} L / ${goals} L  of water saved in 2026`}
           />
-          <ProgressBar />
+          <ProgressBar percentage={progressPercentage} />
           <Description className="mt-15" text={`${users} people are saving water right now.`} />
         </div>
       </div>
