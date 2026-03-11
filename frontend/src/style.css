@@ -21,13 +21,7 @@
   -webkit-appearance: none;
   appearance: none;
   height: 14px;
-  background: linear-gradient(
-    to right,
-    #0A302F 0%,
-    #0A302F calc(12px + (100% - 24px) * var(--progress, 50) / 100),
-    #1AD0CD calc(12px + (100% - 24px) * var(--progress, 50) / 100),
-    #1AD0CD 100%
-  );
+  background: var(--slider-bg, linear-gradient(to right, #0A302F 50%, #1AD0CD 50%));
   border-radius: 999px;
 }
 /* Firefox */
