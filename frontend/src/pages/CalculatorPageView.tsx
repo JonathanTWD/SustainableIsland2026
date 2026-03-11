@@ -14,10 +14,24 @@ export const CalculatorPage = () => {
 
     const LITERS_PER_SHOWER_MINUTE = 8;
     const LITERS_PER_FLUSH = 4.5;
+    const LITERS_PER_LAUNDRY_LOAD = 45;
+    const LITERS_PER_DISHWASHER_CYCLE = 10;
+    const LITERS_PER_MEAT_SERVING = 1500;
+    const LITERS_PER_COFFEE_CUP = 140;
+    const LITERS_PER_NEW_CLOTHES = 2700;
 
-    useEffect(() => {
-        void loadInitial();
-    }, [loadInitial]);
+    const totalLitersPerDay = useMemo(() => {
+        const showerPerDay = people * showerMinutes * LITERS_PER_SHOWER_MINUTE;
+        const toiletPerDay = people * toiletFlushes * LITERS_PER_FLUSH;
+        const householdScale = people / 2;
+        const laundryPerDay = (laundryLoads * householdScale * LITERS_PER_LAUNDRY_LOAD) / 7;
+        const dishwasherPerDay = (dishwasherCycles * householdScale * LITERS_PER_DISHWASHER_CYCLE) / 7;
+        const meatPerWeek = (people * meatServing * LITERS_PER_MEAT_SERVING) / 7;
+        const coffeePerDay = people * coffeeCups * LITERS_PER_COFFEE_CUP;
+        const clothesPerMonth = (people * newClothes * LITERS_PER_NEW_CLOTHES) / 30;
+
+        return Math.round(showerPerDay + toiletPerDay + laundryPerDay + dishwasherPerDay + meatPerWeek + coffeePerDay + clothesPerMonth);
+    }, [people, showerMinutes, toiletFlushes, laundryLoads, dishwasherCycles, meatServing, coffeeCups, newClothes]);
 
     useEffect(() => {
         if (!tip) return;
