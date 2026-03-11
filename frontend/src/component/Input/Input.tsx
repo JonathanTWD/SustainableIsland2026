@@ -18,7 +18,7 @@ export function Input(props: WaterCalcProps) {
 
     return (
         <>
-            <p className="text-black">{props.title}</p>
+            <Description text={props.title || ''} className="text-black" />
             <input
                 type="range"
                 min={props.min}
@@ -50,7 +50,7 @@ export function Input(props: WaterCalcProps) {
                 })}
             </p>
             <Description text={props.text || '\u00A0'} className="text-black text-right" />
-            
+
         </>
     )
 }
