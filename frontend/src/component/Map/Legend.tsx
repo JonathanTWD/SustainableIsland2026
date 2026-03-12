@@ -1,0 +1,52 @@
+import { useState } from "react";
+import { perCapitaGrades, totalGrades } from "../../data/legendGrades";
+
+interface LegendProps {
+  dataType: "perCapita" | "total";
+}
+
+export const Legend = ({ dataType }: LegendProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+ 
+
+  const grades = dataType === "perCapita" ? perCapitaGrades : totalGrades;
+  const title = dataType === "perCapita" ? "m³ per capita" : "m³ (Total)";
+
+  return (
+    <div className="absolute bottom-6 left-6 z-1 flex flex-col items-start min-w-8">
+      {isOpen ? (
+        <div className="bg-white/95 p-4 rounded-lg shadow-lg border border-gray-200">
+          <div className="flex justify-between items-center mb-3">
+            <h4 className="font-bold text-sm text-gray-800 mr-4">{title}</h4>
+            <button 
+              onClick={() => setIsOpen(false)}
+              className="text-gray-500 hover:text-black font-bold text-lg leading-none cursor-pointer"
+            >
+              &times;
+            </button>
+          </div>
+          {grades.map((grade, i) => (
+            <div key={i} className="flex items-center mb-1.5">
+              <span 
+                className="w-4 h-4 inline-block mr-2 border border-gray-400 opacity-70" 
+                style={{ backgroundColor: grade.color }}
+              ></span>
+              <span className="text-xs font-semibold text-gray-700">{grade.label}</span>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <button 
+          onClick={() => setIsOpen(true)}
+          className="bg-white/95 px-3 py-2 rounded-lg shadow-md border border-gray-200 flex items-center text-sm font-bold text-gray-800 hover:bg-white cursor-pointer"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          Legend
+        </button>
+      )}
+    </div>
+  );
+};
