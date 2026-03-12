@@ -7,7 +7,7 @@ import ToggleSwitch from "../component/LoginSignInComponents/ToggleSwitch";
 import { authService } from "../services/auth.service";
 import { Description } from "../component/SubText/Description";
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-const PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/; 
+const PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -58,18 +58,9 @@ const LoginPage = () => {
                 <Header title="Welcome" />
 
                 <div className="flex flex-col gap-6">
-                    <InputField
-                        type="text"
-                        placeholder="Email"
-                        value={email}
-                        onChange={setEmail}
-                    />
-                <div className="flex items-center gap-5 my-2.5">
-                    <div className="grow border-t border-secondary dark:border-accent"/>
-                    <span className="text-secondary font-kalam text-[20px] dark:text-accent">
-                        Or
-                    </span>
-                    <div className="grow border-t border-secondary dark:border-accent"/>
+                    <InputField type="text" placeholder="Email" value={email} onChange={setEmail} />
+                    <InputField type="password" placeholder="Password" value={password} onChange={setPassword} />
+                    {error && <Description text={error} className="text-red-600 text-sm" />}
                 </div>
 
                 <div className="flex-col gap-2.5">
@@ -78,22 +69,19 @@ const LoginPage = () => {
                         onClick={() => void handleLogin()}
                     />
                     <div className="flex items-center gap-5 my-2.5">
-                        <div className="grow border-t border-secondary" />
-                        <span className="text-secondary font-kalam text-[20px]">Or</span>
-                        <div className="grow border-t border-secondary" />
+                        <div className="grow border-t border-secondary dark:border-accent" />
+                        <span className="text-secondary font-kalam text-[20px] dark:text-accent">Or</span>
+                        <div className="grow border-t border-secondary dark:border-accent" />
                     </div>
-                    <Button
-                        text="Sign Up"
-                        onClick={() => navigate("/signup")}
-                    />
+                    <Button text="Sign Up" onClick={() => navigate("/signup")} />
                 </div>
 
-            {/* Dark mode Toggle */}
-            <div className="flex flex-col w-full items-center">
-                <span className="font-nunito text-[16px] text-secondary font-medium dark:text-accent">
-                    Dark mode
-                </span>
-                <ToggleSwitch />
+                <div className="flex flex-col w-full items-center">
+                    <span className="font-nunito text-[16px] text-secondary font-medium dark:text-accent">
+                        Dark mode
+                    </span>
+                    <ToggleSwitch />
+                </div>
             </div>
         </>
     );
