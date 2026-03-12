@@ -24,6 +24,7 @@ services:
     restart: always
     environment:
       # Use the db container name as the host
+      NODE_ENV: production
       DATABASE_URL: postgresql://${POSTGRES_USER:-admin}:${POSTGRES_PASSWORD:-admin_password}@db:5432/${POSTGRES_DB:-sustainable_island}?schema=public
       PORT: 3000
       JWT_SECRET: ${JWT_SECRET:-your_super_secret_key_change_in_production}

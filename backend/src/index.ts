@@ -11,8 +11,15 @@ import savingGoalRoutes from "./routes/saving-goal.routes";
 const app = express();
 const PORT = Number(process.env.PORT);
 
+const allowedOrigins = process.env.NODE_ENV === "production"
+    ? [
+        "https://water-calculator.space",
+        "https://www.water-calculator.space",
+      ]
+    : ["http://localhost:5173"];
+
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true,
 }));
 

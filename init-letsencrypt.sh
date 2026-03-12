@@ -13,7 +13,7 @@
 # --- CONFIGURE THESE ---
 domains=(water-calculator.space www.water-calculator.space)
 email="jonathanmoreraapaza@gmail.com"   # Must be a real email for Let's Encrypt
-staging=1                     # Set to 1 to test without rate limits (staging)
+staging=0                     # Set to 1 to test without rate limits (staging)
 rsa_key_size=4096
 # -----------------------
 
