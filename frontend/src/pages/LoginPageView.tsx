@@ -83,8 +83,6 @@ const LoginPage = () => {
                     <ToggleSwitch />
                 </div>
             </div>
-            </div>
-            </div>
         </>
     );
 };
