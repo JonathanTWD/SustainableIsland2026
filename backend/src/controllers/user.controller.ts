@@ -128,7 +128,16 @@ export const deleteUser = async (req: AuthRequest, res: Response) => {
       return res.status(404).json({ error: "User not found" });
     }
 
-    // Delete user (this also deletes related calculations and goals by cascade)
+    // Delete related records first to satisfy foreign key constraints
+    await prisma.waterCalculations.deleteMany({
+      where: { user_id: userId },
+    });
+
+    await prisma.savingGoals.deleteMany({
+      where: { user_id: userId },
+    });
+
+    // Delete user
     await prisma.users.delete({
       where: { id: userId },
     });

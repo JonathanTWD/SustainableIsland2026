@@ -1,9 +1,10 @@
+import { useNavigate } from "react-router";
 import Goals from "../component/HomePageComponents/Goals";
 import waterImg from "../assets/water.png";
 import { Description } from "../component/SubText/Description";
 
-
 const HomePage = () => {
+    const navigate = useNavigate();
 
     return (
         <>
@@ -20,7 +21,6 @@ const HomePage = () => {
                     Start tracking
                 </button>
                 <Goals />
-
                 <img src={waterImg} alt="Earth droplet" />
                 <div className="h-20"></div>
             </div>
