@@ -29,8 +29,9 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Copy the static files generated in the build stage to the Nginx directory
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose port 80
+# Expose HTTP and HTTPS ports
 EXPOSE 80
+EXPOSE 443
 
 # Command to start Nginx
 CMD ["nginx", "-g", "daemon off;"]
