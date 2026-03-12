@@ -54,7 +54,7 @@ const LoginPage = () => {
 
     return (
         <>
-            <div className="px-6 py-15 flex flex-col gap-12">
+            <div className="px-6 py-15 flex flex-col gap-12 md:mx-[20%]">
                 <Header title="Welcome" />
 
                 <div className="flex flex-col gap-6">
@@ -82,8 +82,6 @@ const LoginPage = () => {
                     </span>
                     <ToggleSwitch />
                 </div>
-            </div>
-            </div>
             </div>
         </>
     );

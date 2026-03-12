@@ -224,7 +224,7 @@ export const CalculatorPage = () => {
                             type="button"
                             onClick={() => void handleSave()}
                             disabled={loading || saving}
-                            className="w-full rounded-xl bg-primary px-4 py-3 text-[16px] font-nunito font-semibold text-black disabled:cursor-not-allowed hover:bg-medium"
+                            className="w-full rounded-xl bg-primary px-4 py-3 text-[16px] font-nunito font-semibold text-black disabled:cursor-not-allowed hover:bg-accent cursor-pointer"
                         >
                             {saving ? "Saving..." : "Save calculation"}
                         </button>

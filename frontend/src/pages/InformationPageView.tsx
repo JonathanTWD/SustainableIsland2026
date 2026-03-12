@@ -4,7 +4,7 @@ import { Map } from "../component/Map/Map";
 
 export const InformationPage = () => {
   return (
-    <div className="mx-6 my-16">
+    <div className="mx-6 my-16 mb-30 md:mx-[20%]">
       <div className="flex flex-col gap-8">
         <Header />
         <InformationTips />
