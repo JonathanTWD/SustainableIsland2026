@@ -13,11 +13,11 @@ const HomePage = () => {
                     <h1>Track your <span className="text-medium dark:text-primary">water</span></h1>
                     <h1>Protect the future</h1>
                 </div>
-                <Description 
-                    text="Measure your water use, set goals, and start saving. Every drop counts." 
-                    className="font-bold text-[16px] flex justify-center text-center" 
+                <Description
+                    text="Measure your water use, set goals, and start saving. Every drop counts."
+                    className="font-bold text-[16px] flex justify-center text-center"
                 />
-                <button className="font-nunito font-semibold text-[24px] bg-medium text-white dark:bg-primary dark:text-black rounded-2xl px-10 py-3">
+                <button onClick={() => navigate("/calculator")} className="font-nunito font-semibold text-[24px] bg-medium text-white dark:bg-primary dark:text-black rounded-2xl px-10 py-3">
                     Start tracking
                 </button>
                 <Goals />
