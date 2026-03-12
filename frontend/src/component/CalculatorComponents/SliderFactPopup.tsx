@@ -11,7 +11,7 @@ export const SliderFactPopup = ({ title, fact, calculation, onClose }: SliderFac
     return (
         <div className="fixed inset-x-4 bottom-32 z-1000 rounded-2xl border-2 border-medium bg-white p-3 shadow-xl">
             <div className="flex items-center justify-between">
-                <strong className="text-[16px] font-nunito font-semibold">{title}</strong>
+                <strong className="text-[16px] font-nunito font-semibold text-secondary">{title}</strong>
                 <button
                     onClick={onClose}
                     className="rounded p-1 text-gray-500 transition hover:bg-gray-100 hover:text-gray-700"

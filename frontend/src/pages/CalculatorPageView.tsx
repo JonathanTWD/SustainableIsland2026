@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Slider } from "../component/CalculatorComponents/CalculatorSlider";
 import { WaterDropLogo } from "../component/CalculatorComponents/WaterDropLogo";
 import { SliderFactPopup } from "../component/CalculatorComponents/SliderFactPopup";
-import { Header } from "../component/Header/Header";
 import { Description } from "../component/SubText/Description";
 import { useWaterCalculation } from "../features/water-calculation/hooks/useWaterCalculation";
 import type { TipData } from "../features/water-calculation/model/types";
@@ -96,19 +95,23 @@ export const CalculatorPage = () => {
 
     return (
         <>
-            <main className="mx-auto min-h-screen w-full max-w-sm px-4 pb-24 pt-4">
+            <main className="mx-auto my-16 min-h-screen w-full max-w-sm px-4 pb-24 pt-4">
                 <section className="space-y-4">
                     <WaterDropLogo title="Total" Subtext="Liters of water per day" value={totalLitersPerDay} />
 
                     {loading && (
-                        <Description className="rounded-xl border border-gray-200 bg-white p-3 text-sm text-gray-600" text="Loading your saved data..." />
+                        <Description 
+                            className="my-4 rounded-xl border border-gray-200 bg-white p-3 text-sm text-gray-600" 
+                            text="Loading your saved data..." />
                     )}
 
                     {error && (
-                        <Description className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700" text={error} />
+                        <Description 
+                            className="my-4 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700" 
+                            text={error} />
                     )}
 
-                    <div className="space-y-4">
+                    <div className="space-y-6">
                         <Slider
                             title="Number of people in your household"
                             subText="Number of people"

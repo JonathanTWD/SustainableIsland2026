@@ -22,11 +22,11 @@ const LoginPage = () => {
                 <Button text="Log in" onClick={() => {}} 
                     />
                 <div className="flex items-center gap-5 my-2.5">
-                    <div className="grow border-t border-secondary "/>
-                    <span className="text-secondary font-kalam text-[20px]">
+                    <div className="grow border-t border-secondary dark:border-accent"/>
+                    <span className="text-secondary font-kalam text-[20px] dark:text-accent">
                         Or
                     </span>
-                    <div className="grow border-t border-secondary"/>
+                    <div className="grow border-t border-secondary dark:border-accent"/>
                 </div>
                 <Button text="Sign Up" onClick={() => {}} 
                     />
@@ -34,7 +34,7 @@ const LoginPage = () => {
 
             {/* Dark mode Toggle */}
             <div className="flex flex-col w-full items-center">
-                <span className="font-nunito text-[16px] text-secondary font-medium">
+                <span className="font-nunito text-[16px] text-secondary font-medium dark:text-accent">
                     Dark mode
                 </span>
                 <ToggleSwitch />

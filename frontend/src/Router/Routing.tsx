@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Outlet } from "react-router";
+import { BrowserRouter, Route, Routes, Outlet, useLocation } from "react-router";
 import HomePage from "../pages/HomePageView";
 import { ProfilePage } from "../pages/ProfilePageView";
 import { CalculatorPage } from "../pages/CalculatorPageView";
@@ -9,11 +9,14 @@ import { Nav } from "../component/Nav/Nav";
 import { ProtectedRoute } from "../component/ProtectedRoute/ProtectedRoute";
 
 const Layout = () => {
+  const location = useLocation();
+  const hideNav = ["/login", "/signup"].includes(location.pathname);
+
   return (
-    <>
+    <div className="min-h-screen dark:bg-secondary dark:text-white transition-colors duration-200">
       <Outlet />
-      <Nav />
-    </>
+      {!hideNav && <Nav />}
+    </div>
   );
 };
 
@@ -23,6 +26,7 @@ export const Routing = () => {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path="homepage" element={<HomePage />} />
           <Route path="calculator" element={<CalculatorPage />} />
           <Route path="information" element={<InformationPage />} />
           <Route path="login" element={<LoginPage />} />

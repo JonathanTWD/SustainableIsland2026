@@ -6,9 +6,9 @@ interface ProgressBarProps {
 const ProgressBar = ({ percentage = 0 }: ProgressBarProps) => {
     return (
         <div className="relative w-full">
-            <div className="w-full h-2 bg-primary rounded-full relative">
+            <div className="w-full h-2 bg-primary dark:bg-white rounded-full relative">
                 <div
-                    className="absolute left-0 top-0 h-full bg-secondary rounded-full"
+                    className="absolute left-0 top-0 h-full bg-secondary dark:bg-primary rounded-full"
                     style={{ width: `${percentage}%` }}
                 />
             </div>
@@ -17,10 +17,10 @@ const ProgressBar = ({ percentage = 0 }: ProgressBarProps) => {
                 style={{ left: `${percentage}%`, transform: "translateX(-50%)" }}
             >
                 {/* Arrow */}
-                <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white" />
+                <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-neutral-100" />
                 {/* Card */}
-                <div className="-mt-px bg-white rounded-xl shadow-md px-3 py-2">
-                    <span className="font-nunito font-medium text-[12px]">
+                <div className="-mt-px bg-neutral-100 rounded-xl shadow-md px-3 py-2">
+                    <span className="font-nunito font-medium text-[12px] text-black">
                         {percentage}%
                     </span>
                 </div>

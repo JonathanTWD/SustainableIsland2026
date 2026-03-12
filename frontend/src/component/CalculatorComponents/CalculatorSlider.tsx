@@ -1,3 +1,6 @@
+import { Description } from "../SubText/Description";
+import { useTheme } from "../../context/ThemeContext";
+
 interface WaterSliderProps {
     value: number;
     onChange: (value: number) => void;
@@ -9,6 +12,8 @@ interface WaterSliderProps {
 }
 
 export const Slider = (props: WaterSliderProps) => {
+    const { isDarkMode } = useTheme();
+
     const handleCommit = () => {
         props.onCommit?.(props.value);
     };
@@ -16,9 +21,12 @@ export const Slider = (props: WaterSliderProps) => {
     const progress = ((props.value - props.min) / (props.max - props.min)) * 100;
     const stop = `calc(12px + (100% - 24px) * ${progress / 100})`;
 
+    const filled = isDarkMode ? '#1AD0CD' : '#0A302F';
+    const unfilled = isDarkMode ? '#ffffff' : '#1AD0CD';
+
     return (
-        <div className="space-y-1">
-            <p className="text-[16px] font-nunito font-medium">{props.title}</p>
+        <div className="space-y-2">
+            <Description text={props.title ?? ""} className="text-[16px] font-medium" />
             <input
                 type="range"
                 min={props.min}
@@ -29,11 +37,9 @@ export const Slider = (props: WaterSliderProps) => {
                 onTouchEnd={handleCommit}
                 onBlur={handleCommit}
                 className="slider w-full"
-                style={{ '--slider-bg': `linear-gradient(to right, #0A302F 0%, #0A302F ${stop}, #1AD0CD ${stop}, #1AD0CD 100%)` } as React.CSSProperties}
+                style={{ '--slider-bg': `linear-gradient(to right, ${filled} 0%, ${filled} ${stop}, ${unfilled} ${stop}, ${unfilled} 100%)` } as React.CSSProperties}
             />
-            <p className="text-sm font-nunito font-medium text-secondary">
-                {props.subText}: <span>{props.value}</span>
-            </p>
+            <Description text={`${props.subText}: ${props.value}`} className="text-sm font-medium text-secondary dark:text-white" />
         </div>
     );
 };
