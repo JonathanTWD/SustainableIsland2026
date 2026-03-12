@@ -6,6 +6,8 @@ import InputField from "../component/LoginSignInComponents/InputField";
 import ToggleSwitch from "../component/LoginSignInComponents/ToggleSwitch";
 import { authService } from "../services/auth.service";
 import { Description } from "../component/SubText/Description";
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+const PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/; 
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -18,8 +20,21 @@ const LoginPage = () => {
     const [error, setError] = useState<string | null>(null);
 
     const handleLogin = async () => {
-        if (!email || !password) {
+        const normalizedEmail = email.trim().toLowerCase();
+        const normalizedPassword = password.trim();
+
+        if (!normalizedEmail || !normalizedPassword) {
             setError("Please enter both email and password.");
+            return;
+        }
+
+        if (!EMAIL_REGEX.test(normalizedEmail)) {
+            setError("Please enter a valid email address.");
+            return;
+        }
+
+        if (!PASSWORD_REGEX.test(normalizedPassword)) {
+            setError("Password must be at least 6 characters and include letters and numbers.");
             return;
         }
 
@@ -27,7 +42,7 @@ const LoginPage = () => {
         setError(null);
 
         try {
-            await authService.login({ email, password });
+            await authService.login({ email: normalizedEmail, password: normalizedPassword });
             navigate(from, { replace: true });
         } catch (err) {
             console.error(err);
