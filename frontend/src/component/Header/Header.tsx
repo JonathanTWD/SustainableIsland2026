@@ -13,7 +13,7 @@ export function Header({ onMenuClick, isMenuOpen, title }: HeaderProps) {
 
     if (location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login') {
         return (
-            <header className="w-full h-20 flex items-center text-accent font-['Kalam']">
+            <header className="w-full h-20 flex items-center text-secondary dark:text-accent font-['Kalam']">
                 <h1 className="font-bold text-4xl">{title || "Welcome"}</h1>
             </header>
         )

@@ -71,7 +71,7 @@ const SignupPage = () => {
 
                 <div className="flex flex-col gap-6">
                     <div className="flex justify-center">
-                        <span className="text-secondary font-nunito text-[24px] font-bold">
+                        <span className="text-secondary dark:text-accent font-nunito text-[24px] font-bold ">
                             Create account
                         </span>
                     </div>
@@ -87,15 +87,17 @@ const SignupPage = () => {
                         onClick={() => void handleSignup()}
                     />
                     <div className="flex items-center gap-5 my-2.5">
-                        <div className="grow border-t border-secondary" />
-                        <span className="text-secondary font-kalam text-[20px]">Or</span>
-                        <div className="grow border-t border-secondary" />
+                        <div className="grow border-t border-secondary dark:border-accent"/>
+                        <span className="text-secondary font-kalam text-[20px] dark:text-accent">
+                            Or
+                        </span>
+                        <div className="grow border-t border-secondary dark:border-accent"/>
                     </div>
                     <Button text="Log in" onClick={() => navigate("/login")} />
                 </div>
 
                 <div className="flex flex-col w-full items-center">
-                    <span className="font-nunito text-[16px] text-secondary font-medium">
+                    <span className="font-nunito text-[16px] text-secondary font-medium dark:text-accent">
                         Dark mode
                     </span>
                     <ToggleSwitch />

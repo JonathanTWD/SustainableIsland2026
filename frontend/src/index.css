@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark, .dark *));
+
+html.dark {
+  background-color: var(--color-secondary);
+}
+
 @theme {
   --font-kalam: 'Kalam', cursive;
   --font-nunito: 'Nunito', sans-serif;

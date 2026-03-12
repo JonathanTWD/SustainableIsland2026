@@ -3,6 +3,8 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark, .dark *));
+
 @theme {
   --font-kalam: 'Kalam', cursive;
   --font-nunito: 'Nunito', sans-serif;
@@ -58,4 +60,14 @@
   border: 2px solid #1AD0CD;
   border-radius: 50%;
   cursor: pointer;
+}
+
+/* Dark mode thumb */
+.dark .slider::-webkit-slider-thumb {
+  background: #1AD0CD;
+  border-color: #ffffff;
+}
+.dark .slider::-moz-range-thumb {
+  background: #1AD0CD;
+  border-color: #ffffff;
 }

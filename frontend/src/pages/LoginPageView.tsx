@@ -64,13 +64,12 @@ const LoginPage = () => {
                         value={email}
                         onChange={setEmail}
                     />
-                    <InputField
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={setPassword}
-                    />
-                    {error && <Description text={error} className="text-red-600 text-sm" />}
+                <div className="flex items-center gap-5 my-2.5">
+                    <div className="grow border-t border-secondary dark:border-accent"/>
+                    <span className="text-secondary font-kalam text-[20px] dark:text-accent">
+                        Or
+                    </span>
+                    <div className="grow border-t border-secondary dark:border-accent"/>
                 </div>
 
                 <div className="flex-col gap-2.5">
@@ -89,12 +88,12 @@ const LoginPage = () => {
                     />
                 </div>
 
-                <div className="flex flex-col w-full items-center">
-                    <span className="font-nunito text-[16px] text-secondary font-medium">
-                        Dark mode
-                    </span>
-                    <ToggleSwitch />
-                </div>
+            {/* Dark mode Toggle */}
+            <div className="flex flex-col w-full items-center">
+                <span className="font-nunito text-[16px] text-secondary font-medium dark:text-accent">
+                    Dark mode
+                </span>
+                <ToggleSwitch />
             </div>
         </>
     );

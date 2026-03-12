@@ -6,7 +6,7 @@ interface ButtonProps {
 
 export function Button({ text, onClick, className }: ButtonProps) {
     return (
-        <button onClick={onClick} className={`px-10 py-2 bg-primary text-white rounded hover:bg-cyan-600 transition-colors duration-300 ${className || ''}`}>
+        <button onClick={onClick} className={`w-full p-3 font-nunito text-[32px] font-medium bg-primary text-black rounded-2xl hover:bg-medium transition-colors duration-300 ${className || ''}`}>
             {text}
         </button>
     )
