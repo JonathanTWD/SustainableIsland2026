@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # Database Container
+  db:
+    image: postgres:15-alpine
+    container_name: sustainable_island_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin_password}
+      POSTGRES_DB: ${POSTGRES_DB:-sustainable_island}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  # Backend Container (Express + Prisma)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sustainable_island_backend
+    restart: always
+    environment:
+      # Use the db container name as the host
+      DATABASE_URL: postgresql://${POSTGRES_USER:-admin}:${POSTGRES_PASSWORD:-admin_password}@db:5432/${POSTGRES_DB:-sustainable_island}?schema=public
+      PORT: 3000
+      JWT_SECRET: ${JWT_SECRET:-your_super_secret_key_change_in_production}
+      # Add other necessary backend environment variables here
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  # Frontend & Reverse Proxy Container (Nginx)
+  nginx:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-/api}
+    container_name: sustainable_island_nginx
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  pgdata:
