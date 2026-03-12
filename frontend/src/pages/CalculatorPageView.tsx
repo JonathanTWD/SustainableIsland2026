@@ -7,10 +7,30 @@ import { useWaterCalculation } from "../features/water-calculation/hooks/useWate
 import type { TipData } from "../features/water-calculation/model/types";
 
 export const CalculatorPage = () => {
-    const { form, setField, totalLitersPerDay, loading, saving, error, loadInitial, save } =
-        useWaterCalculation();
+    const {
+        form,
+        setField,
+        totalLitersPerDay,
+        directLitersPerDay,
+        indirectLitersPerDay,
+        loading,
+        saving,
+        error,
+        loadInitial,
+        save,
+    } = useWaterCalculation();
 
     const [tip, setTip] = useState<TipData | null>(null);
+
+    const [showSavedToast, setShowSavedToast] = useState(false);
+
+    const handleSave = async () => {
+        const ok = await save();
+        if (!ok) return;
+
+        setShowSavedToast(true);
+        window.setTimeout(() => setShowSavedToast(false), 2500);
+    };
 
     const LITERS_PER_SHOWER_MINUTE = 8;
     const LITERS_PER_FLUSH = 4.5;
@@ -98,6 +118,15 @@ export const CalculatorPage = () => {
             <main className="mx-auto min-h-screen w-full max-w-sm px-4 pb-24 pt-4">
                 <section className="space-y-4">
                     <WaterDropLogo title="Total" Subtext="Liters of water per day" value={totalLitersPerDay} />
+
+                    <div className="rounded-xl border border-gray-200 bg-white p-3">
+                        <Description className="text-sm text-gray-700" text={`Direct water: ${directLitersPerDay} L/day`} />
+                        <Description className="text-sm text-gray-700" text={`Indirect water: ${indirectLitersPerDay} L/day`} />
+                        <Description
+                            className="mt-1 text-sm font-semibold text-gray-900"
+                            text={`Total water: ${directLitersPerDay} + ${indirectLitersPerDay} = ${totalLitersPerDay} L/day`}
+                        />
+                    </div>
 
                     {loading && (
                         <Description className="rounded-xl border border-gray-200 bg-white p-3 text-sm text-gray-600" text="Loading your saved data..." />
@@ -189,7 +218,7 @@ export const CalculatorPage = () => {
 
                         <button
                             type="button"
-                            onClick={() => void save()}
+                            onClick={() => void handleSave()}
                             disabled={loading || saving}
                             className="w-full rounded-xl bg-primary px-4 py-3 text-[16px] font-nunito font-semibold text-black disabled:cursor-not-allowed hover:bg-medium"
                         >
@@ -197,6 +226,12 @@ export const CalculatorPage = () => {
                         </button>
                     </div>
                 </section>
+
+                {showSavedToast && (
+                    <div className="fixed inset-x-4 bottom-24 z-50 rounded-xl border border-green-200 bg-green-50 p-3 shadow-sm">
+                        <Description className="text-sm font-semibold text-green-800" text="Your data has been saved." />
+                    </div>
+                )}
 
                 {tip && (
                     <SliderFactPopup
@@ -206,6 +241,8 @@ export const CalculatorPage = () => {
                         onClose={() => setTip(null)}
                     />
                 )}
+
+
             </main>
         </>
     );
