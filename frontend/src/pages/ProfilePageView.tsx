@@ -69,6 +69,10 @@ export const ProfilePage = () => {
                 setUserId(me.user.id);
                 setEmail(me.user.email);
 
+                // Genindlæs gemt målnavn fra localStorage
+                const savedGoalName = localStorage.getItem(`goal-name-${me.user.id}`);
+                if (savedGoalName) setGoalName(savedGoalName);
+
                 const [records, goals] = await Promise.all([
                     waterCalculationService.getByUserId(me.user.id),
                     savingGoalService.getByUserId(me.user.id),
@@ -160,6 +164,9 @@ export const ProfilePage = () => {
 
             setGoalId(saved.id);
             setGoalTarget(saved.target_liters_per_day ?? parsedTarget);
+
+            // Gem målnavn lokalt så det overlever reload
+            localStorage.setItem(`goal-name-${userId}`, trimmedName);
         } catch {
             setGoalError("Could not save goal. Try again.");
         } finally {
@@ -177,6 +184,7 @@ export const ProfilePage = () => {
             }
         }
 
+        if (userId) localStorage.removeItem(`goal-name-${userId}`);
         setGoalId(null);
         setGoalName("");
         setGoalTargetInput("");
@@ -189,8 +197,11 @@ export const ProfilePage = () => {
 
     return (
         <>
-            <Header onMenuClick={handleMenuToggle} isMenuOpen={isMenuOpen} />
-            <ProfileDropDown isOpen={isMenuOpen} items={menuItems} onSelect={handleMenuSelect} />
+            {/* relative wrapper så dropdown positionerer sig korrekt */}
+            <div className="relative">
+                <Header onMenuClick={handleMenuToggle} isMenuOpen={isMenuOpen} />
+                <ProfileDropDown isOpen={isMenuOpen} items={menuItems} onSelect={handleMenuSelect} />
+            </div>
 
             {latest ? (
                 <div>
@@ -223,7 +234,7 @@ export const ProfilePage = () => {
             </div>
 
             <div>
-                <ProfileContact email={email} phone={0} />
+                <ProfileContact email={email} />
             </div>
 
             {confirmDelete && (

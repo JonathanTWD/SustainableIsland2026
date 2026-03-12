@@ -9,18 +9,18 @@ export const InformationPage = () => {
         <Header />
         <InformationTips />
       </div>
-      
+
       {/* Map */}
       <div>
-        <h2 className="text-2xl font-medium text-white mb-4 w-[90%] mx-auto">Water use per capita</h2>
+        <h2 className="text-2xl font-medium text-secondary dark:text-white mb-4 w-[90%] mx-auto">Water use per capita</h2>
         <Map />
-        <h6 className="font-medium text-white w-[90%] mx-auto">
+        <h6 className="font-medium text-secondary dark:text-white w-[90%] mx-auto">
           Source:{" "}
           <a
             href="https://worldpopulationreview.com/country-rankings/water-consumption-by-country"
             target="_blank"
             rel="noopener noreferrer"
-            className=" text-blue-400 hover:underline"
+            className="text-blue-400 hover:underline"
           >
             World Population Review
           </a>

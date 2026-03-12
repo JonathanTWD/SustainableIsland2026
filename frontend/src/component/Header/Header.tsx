@@ -1,5 +1,4 @@
 import { useLocation } from 'react-router'
-import headerImage from '../../assets/headersymbol.png'
 import logoutSymbol from '../../assets/logoutsymbol.png'
 
 interface HeaderProps {
@@ -15,21 +14,6 @@ export function Header({ onMenuClick, isMenuOpen, title }: HeaderProps) {
         return (
             <header className="w-full h-20 flex items-center text-secondary dark:text-accent font-['Kalam']">
                 <h1 className="font-bold text-4xl">{title || "Welcome"}</h1>
-            </header>
-        )
-    }
-    else if (location.pathname === '/calculator') {
-        return (
-            <header className="self-stretch px-20 py-6 inline-flex justify-start items-center gap-3 text-accent">
-                <div className="">
-                    <div className="w-14 h-6 absolute top-19 bg-teal-700 rounded-bl-[99px] rounded-br-[99px]"></div>
-                    <img src={headerImage} alt="Header" className="w-14 h-20 relative z-100" />
-                </div>
-                <div className="flex flex-col gap-2">
-                    <h3 className="h-6 justify-start text-2xl font-bold font-['Kalam']">Total</h3>
-                    <h3 className="h-5 justify-start text-xl font-bold font-['Nunito']">5.000</h3>
-                    <h3 className="h-4 justify-start text-base font-normal font-['Nunito']">Liters of water per day</h3>
-                </div>
             </header>
         )
     }
@@ -57,7 +41,7 @@ export function Header({ onMenuClick, isMenuOpen, title }: HeaderProps) {
                         aria-expanded={isMenuOpen}
                         aria-label="Toggle profile menu"
                     >
-                    <img src={logoutSymbol} alt="Logout" className="w-8 h-8" />
+                        <img src={logoutSymbol} alt="Logout" className="w-8 h-8" />
                     </button>
                 </div>
             </header>
