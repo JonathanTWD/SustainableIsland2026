@@ -8,9 +8,12 @@ import { Header } from "../component/Header/Header";
 import { authService } from "../services/auth.service";
 import { userService } from "../services/user.service";
 import { waterCalculationService } from "../services/water-calculation.service";
+import { savingGoalService } from "../services/saving-goal.service";
 import type { WaterCalculationResponse } from "../interfaces/water-calculation.interface";
 import type { WaterItem } from "../types/WaterItem";
 import { Description } from "../component/SubText/Description";
+import { GoalForm } from "../component/ProfileComponents/GoalForm";
+import { GoalSummary } from "../component/ProfileComponents/GoalSummary";
 
 const menuItems = [
     { id: "logout", label: "Log out" },
@@ -44,6 +47,12 @@ export const ProfilePage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [confirmDelete, setConfirmDelete] = useState(false);
+    const [goalId, setGoalId] = useState<number | null>(null);
+    const [goalName, setGoalName] = useState("");
+    const [goalTargetInput, setGoalTargetInput] = useState("");
+    const [goalTarget, setGoalTarget] = useState<number | null>(null);
+    const [goalSaving, setGoalSaving] = useState(false);
+    const [goalError, setGoalError] = useState<string | null>(null);
 
     const waterData = useMemo(() => {
         if (!latest) return [];
@@ -60,8 +69,22 @@ export const ProfilePage = () => {
                 setUserId(me.user.id);
                 setEmail(me.user.email);
 
-                const records = await waterCalculationService.getByUserId(me.user.id);
+                const [records, goals] = await Promise.all([
+                    waterCalculationService.getByUserId(me.user.id),
+                    savingGoalService.getByUserId(me.user.id),
+                ]);
                 setLatest(records.length > 0 ? records[0] : null);
+
+                const existingGoal = goals[0];
+                if (existingGoal) {
+                    setGoalId(existingGoal.id);
+                    setGoalTarget(existingGoal.target_liters_per_day ?? null);
+                    setGoalTargetInput(
+                        existingGoal.target_liters_per_day
+                            ? String(Math.round(existingGoal.target_liters_per_day))
+                            : "",
+                    );
+                }
             } catch (err) {
                 console.error(err);
                 setError("Could not load profile data");
@@ -110,24 +133,93 @@ export const ProfilePage = () => {
         }
     };
 
+    const handleSaveGoal = async () => {
+        if (!userId) return;
+
+        const parsedTarget = Number(goalTargetInput);
+        const trimmedName = goalName.trim();
+
+        if (!trimmedName) {
+            setGoalError("Goal name is required.");
+            return;
+        }
+
+        if (!Number.isFinite(parsedTarget) || parsedTarget <= 0) {
+            setGoalError("Goal target must be above 0.");
+            return;
+        }
+
+        setGoalSaving(true);
+        setGoalError(null);
+
+        try {
+            const payload = { target_liters_per_day: parsedTarget };
+            const saved = goalId
+                ? await savingGoalService.update(goalId, payload)
+                : await savingGoalService.create({ user_id: userId, ...payload });
+
+            setGoalId(saved.id);
+            setGoalTarget(saved.target_liters_per_day ?? parsedTarget);
+        } catch {
+            setGoalError("Could not save goal. Try again.");
+        } finally {
+            setGoalSaving(false);
+        }
+    };
+
+    const handleResetOrDeleteGoal = async () => {
+        if (goalId) {
+            try {
+                await savingGoalService.delete(goalId);
+            } catch {
+                setGoalError("Could not delete goal. Try again.");
+                return;
+            }
+        }
+
+        setGoalId(null);
+        setGoalName("");
+        setGoalTargetInput("");
+        setGoalTarget(null);
+        setGoalError(null);
+    };
+
     if (loading) return <div>Loading profile...</div>;
     if (error) return <div>{error}</div>;
-    if (!latest) return (
-        <div>
-            <Header onMenuClick={handleMenuToggle} isMenuOpen={isMenuOpen} />
-            <ProfileDropDown isOpen={isMenuOpen} items={menuItems} onSelect={handleMenuSelect} />
-            <Description text="No data yet — go to the calculator to save your first calculation!" />
-        </div>
-    );
 
     return (
         <>
             <Header onMenuClick={handleMenuToggle} isMenuOpen={isMenuOpen} />
             <ProfileDropDown isOpen={isMenuOpen} items={menuItems} onSelect={handleMenuSelect} />
 
+            {latest ? (
+                <div>
+                    <WaterChart data={waterData} />
+                    <ProfileTextGraph data={waterData} />
+                </div>
+            ) : (
+                <div className="mx-4 mt-4">
+                    <Description text="No data yet — go to the calculator to save your first calculation!" />
+                </div>
+            )}
+
             <div>
-                <WaterChart data={waterData} />
-                <ProfileTextGraph data={waterData} />
+                <GoalForm
+                    goalName={goalName}
+                    goalTargetInput={goalTargetInput}
+                    saving={goalSaving}
+                    error={goalError}
+                    hasSavedGoal={goalId !== null}
+                    onGoalNameChange={setGoalName}
+                    onGoalTargetChange={setGoalTargetInput}
+                    onSave={() => void handleSaveGoal()}
+                    onResetOrDelete={() => void handleResetOrDeleteGoal()}
+                />
+                <GoalSummary
+                    goalName={goalName}
+                    goalTarget={goalTarget}
+                    currentDailyConsumption={latest?.estimated_daily_consumption ?? null}
+                />
             </div>
 
             <div>
