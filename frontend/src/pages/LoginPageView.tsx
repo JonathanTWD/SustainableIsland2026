@@ -95,6 +95,8 @@ const LoginPage = () => {
                 </span>
                 <ToggleSwitch />
             </div>
+            </div>
+            </div>
         </>
     );
 };

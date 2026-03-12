@@ -37,8 +37,8 @@ export function Header({ onMenuClick, isMenuOpen, title }: HeaderProps) {
         return (
             <header className="w-96 inline-flex justify-between items-start">
                 <div className="h-24 inline-flex flex-col justify-start items-start gap-4">
-                    <h1 className="w-56 h-12 justify-start text-cyan-200 text-4xl font-bold font-['Kalam']">Information</h1>
-                    <h3 className="justify-end text-cyan-200 text-xl font-normal font-['Nunito']">Tips and tricks</h3>
+                    <h1 className="w-56 h-12 justify-start text-secondary dark:text-accent text-[40px] font-bold font-['Kalam']">Information</h1>
+                    <h3 className="justify-end text-medium dark:text-accent text-[20px] font-normal font-['Nunito']">Tips and tricks</h3>
                 </div>
             </header>
         )
