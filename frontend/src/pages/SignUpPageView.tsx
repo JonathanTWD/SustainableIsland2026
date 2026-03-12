@@ -7,6 +7,10 @@ import ToggleSwitch from "../component/LoginSignInComponents/ToggleSwitch";
 import { authService } from "../services/auth.service";
 import { Description } from "../component/SubText/Description";
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+const USERNAME_REGEX = /^(?=.{3,20}$)[a-zA-Z0-9._-]+$/;
+const PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
+
 const SignupPage = () => {
     const navigate = useNavigate();
 
@@ -17,8 +21,28 @@ const SignupPage = () => {
     const [error, setError] = useState<string | null>(null);
 
     const handleSignup = async () => {
-        if (!email || !password) {
+        const normalizedName = name.trim();
+        const normalizedEmail = email.trim().toLowerCase();
+        const normalizedPassword = password.trim();
+
+        if (!normalizedName) {
+            setError("Username is required.");
+            return;
+        }
+        if (!USERNAME_REGEX.test(normalizedName)) {
+            setError("Username must be 3-20 chars and only use letters, numbers, dot, underscore or hyphen.");
+            return;
+        }
+        if (!normalizedEmail || !normalizedPassword) {
             setError("Please enter both email and password.");
+            return;
+        }
+        if (!EMAIL_REGEX.test(normalizedEmail)) {
+            setError("Please enter a valid email address.");
+            return;
+        }
+        if (!PASSWORD_REGEX.test(normalizedPassword)) {
+            setError("Password must be at least 6 characters and include letters and numbers.");
             return;
         }
 
@@ -26,7 +50,11 @@ const SignupPage = () => {
         setError(null);
 
         try {
-            await authService.register({ name, email, password });
+            await authService.register({
+                name: normalizedName,
+                email: normalizedEmail,
+                password: normalizedPassword,
+            });
             navigate("/", { replace: true });
         } catch (err) {
             console.error(err);
