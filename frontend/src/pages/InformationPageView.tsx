@@ -4,10 +4,14 @@ import { Map } from "../component/Map/Map";
 
 export const InformationPage = () => {
   return (
-    <div className="container mx-auto px-4 pb-8">
-      <Header />
-      <InformationTips />
-      <div className="mt-8">
+    <div className="mx-6 my-16">
+      <div className="flex flex-col gap-8">
+        <Header />
+        <InformationTips />
+      </div>
+      
+      {/* Map */}
+      <div>
         <h2 className="text-2xl font-medium text-white mb-4 w-[90%] mx-auto">Water use per capita</h2>
         <Map />
         <h6 className="font-medium text-white w-[90%] mx-auto">
