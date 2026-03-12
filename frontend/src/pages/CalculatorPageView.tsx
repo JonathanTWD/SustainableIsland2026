@@ -21,7 +21,6 @@ export const CalculatorPage = () => {
     } = useWaterCalculation();
 
     const [tip, setTip] = useState<TipData | null>(null);
-
     const [showSavedToast, setShowSavedToast] = useState(false);
 
     const handleSave = async () => {
@@ -39,6 +38,7 @@ export const CalculatorPage = () => {
     const LITERS_PER_MEAT_SERVING = 1700;
     const LITERS_PER_COFFEE_CUP = 140;
     const LITERS_PER_CLOTHING_ITEM = 2700;
+    const LITERS_PER_DIGITAL_HOUR = 0.3;
 
     useEffect(() => {
         void loadInitial();
@@ -113,6 +113,15 @@ export const CalculatorPage = () => {
         });
     };
 
+    const showDigitalTip = (hours: number) => {
+        const liters = Math.round(hours * LITERS_PER_DIGITAL_HOUR * 10) / 10;
+        setTip({
+            title: "Digital services insight",
+            fact: "Streaming and internet use requires data centers that consume water for cooling.",
+            calculation: `${hours} hrs x ${LITERS_PER_DIGITAL_HOUR} L/hr = ${liters} L/day per person`,
+        });
+    };
+
     return (
         <>
             <main className="mx-auto my-16 min-h-screen w-full max-w-sm px-4 pb-24 pt-4">
@@ -129,15 +138,17 @@ export const CalculatorPage = () => {
                     </div>
 
                     {loading && (
-                        <Description 
-                            className="my-4 rounded-xl border border-gray-200 bg-white p-3 text-sm text-gray-600" 
-                            text="Loading your saved data..." />
+                        <Description
+                            className="my-4 rounded-xl border border-gray-200 bg-white p-3 text-sm text-gray-600"
+                            text="Loading your saved data..."
+                        />
                     )}
 
                     {error && (
-                        <Description 
-                            className="my-4 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700" 
-                            text={error} />
+                        <Description
+                            className="my-4 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700"
+                            text={error}
+                        />
                     )}
 
                     <div className="space-y-6">
@@ -202,7 +213,7 @@ export const CalculatorPage = () => {
 
                         <Slider
                             title="Coffee cups"
-                            subText="Cups per Day"
+                            subText="Cups per day"
                             value={form.coffeeCupsPerDay}
                             onChange={(value) => setField("coffeeCupsPerDay", value)}
                             onCommit={showCoffeeTip}
@@ -218,6 +229,16 @@ export const CalculatorPage = () => {
                             onCommit={showClothesTip}
                             min={0}
                             max={30}
+                        />
+
+                        <Slider
+                            title="Digital services"
+                            subText="Hours per day"
+                            value={form.digitalServicesHoursPerDay}
+                            onChange={(value) => setField("digitalServicesHoursPerDay", value)}
+                            onCommit={showDigitalTip}
+                            min={0}
+                            max={24}
                         />
 
                         <button
@@ -245,8 +266,6 @@ export const CalculatorPage = () => {
                         onClose={() => setTip(null)}
                     />
                 )}
-
-
             </main>
         </>
     );
