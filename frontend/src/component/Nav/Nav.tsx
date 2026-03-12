@@ -9,7 +9,7 @@ export function Nav() {
             <Link to="/information">
                 <img src={hint} alt="Hint" className="w-10" />
             </Link>
-            <Link to="/calculator">
+            <Link to="/">
                 <div className="w-20 h-20 relative bg-primary rounded-[99px] -top-5  outline-2 -outline-offset-2 outline-black overflow-hidden">
                     <img src={water} alt="Water" className="w-9 h-12 left-5.25 top-3.5 absolute" />
                 </div>

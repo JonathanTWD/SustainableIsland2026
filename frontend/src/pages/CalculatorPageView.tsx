@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Slider } from "../component/CalculatorComponents/CalculatorSlider";
 import { WaterDropLogo } from "../component/CalculatorComponents/WaterDropLogo";
 import { SliderFactPopup } from "../component/CalculatorComponents/SliderFactPopup";
-import { Header } from "../component/Header/Header";
 import { Description } from "../component/SubText/Description";
 import { useWaterCalculation } from "../features/water-calculation/hooks/useWaterCalculation";
 import type { TipData } from "../features/water-calculation/model/types";
