@@ -2,7 +2,10 @@ import { useCallback, useMemo, useState } from "react";
 import { authService } from "../../../services/auth.service";
 import { waterCalculationService } from "../../../services/water-calculation.service";
 import { initialCalculatorFormState } from "../model/defaults";
-import { calculateDailyConsumption } from "../model/calculateDailyConsumption";
+import {
+    calculateDailyConsumption,
+    calculateDailyConsumptionBreakdown,
+} from "../model/calculateDailyConsumption";
 import {
     fromApiToForm,
     toCreateWaterCalculationDTO,
@@ -19,7 +22,10 @@ export const useWaterCalculation = () => {
     const [saving, setSaving] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    const totalLitersPerDay = useMemo(() => calculateDailyConsumption(form), [form]);
+    const breakdown = useMemo(() => calculateDailyConsumptionBreakdown(form), [form]);
+    const totalLitersPerDay = breakdown.totalLitersPerDay;
+    const directLitersPerDay = breakdown.directLitersPerDay;
+    const indirectLitersPerDay = breakdown.indirectLitersPerDay;
 
     const setField = useCallback(
         <K extends keyof CalculatorFormState>(key: K, value: CalculatorFormState[K]) => {
@@ -55,10 +61,10 @@ export const useWaterCalculation = () => {
         }
     }, []);
 
-    const save = useCallback(async () => {
+    const save = useCallback(async (): Promise<boolean> => {
         if (!userId) {
             setError("User is not loaded yet");
-            return;
+            return false;
         }
 
         setSaving(true);
@@ -75,9 +81,12 @@ export const useWaterCalculation = () => {
                 const created = await waterCalculationService.create(dto);
                 setRecordId(created.id);
             }
+
+            return true;
         } catch (err) {
             console.error("Failed to save water calculation", err);
             setError("Could not save your water data");
+            return false;
         } finally {
             setSaving(false);
         }
@@ -87,6 +96,8 @@ export const useWaterCalculation = () => {
         form,
         setField,
         totalLitersPerDay,
+        directLitersPerDay,
+        indirectLitersPerDay,
         loading,
         saving,
         error,
