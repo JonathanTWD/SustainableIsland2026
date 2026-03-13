@@ -14,6 +14,7 @@ import type { WaterItem } from "../types/WaterItem";
 import { Description } from "../component/SubText/Description";
 import { GoalForm } from "../component/ProfileComponents/GoalForm";
 import { GoalSummary } from "../component/ProfileComponents/GoalSummary";
+import ToggleSwitch from "../component/LoginSignInComponents/ToggleSwitch";
 
 const menuItems = [
     { id: "logout", label: "Log out" },
@@ -196,7 +197,7 @@ export const ProfilePage = () => {
     if (error) return <div>{error}</div>;
 
     return (
-        <>
+        <div className="mx-6 my-16 md:mx-[20%]">
             {/* relative wrapper så dropdown positionerer sig korrekt */}
             <div className="relative">
                 <Header onMenuClick={handleMenuToggle} isMenuOpen={isMenuOpen} />
@@ -237,6 +238,13 @@ export const ProfilePage = () => {
                 <ProfileContact email={email} />
             </div>
 
+            <div className="flex flex-col w-full items-center">
+                    <span className="font-nunito text-[16px] text-secondary font-medium dark:text-accent">
+                        Dark mode
+                    </span>
+                    <ToggleSwitch />
+                </div>
+
             {confirmDelete && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
                     <div className="mx-4 w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl">
@@ -261,6 +269,6 @@ export const ProfilePage = () => {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 };

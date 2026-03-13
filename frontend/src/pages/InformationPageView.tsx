@@ -12,7 +12,7 @@ export const InformationPage = () => {
 
       {/* Map */}
       <div>
-        <h2 className="text-2xl font-medium text-secondary dark:text-white mb-4 w-[90%] mx-auto">Water use per capita</h2>
+        <h2 className="text-2xl font-medium text-secondary dark:text-white mb-4 mt-8 w-[90%] mx-auto">Water use per capita</h2>
         <Map />
         <h6 className="font-medium text-secondary dark:text-white w-[90%] mx-auto">
           Source:{" "}
