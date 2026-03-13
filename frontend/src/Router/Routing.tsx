@@ -31,7 +31,7 @@ export const Routing = () => {
           <Route path="information" element={<InformationPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
-
+          
           <Route element={<ProtectedRoute />}>
             <Route path="profile" element={<ProfilePage />} />
           </Route>
