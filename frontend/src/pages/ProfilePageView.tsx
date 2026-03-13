@@ -238,12 +238,12 @@ export const ProfilePage = () => {
                 <ProfileContact email={email} />
             </div>
 
-            <div className="flex flex-col w-full items-center">
-                    <span className="font-nunito text-[16px] text-secondary font-medium dark:text-accent">
-                        Dark mode
-                    </span>
-                    <ToggleSwitch />
-                </div>
+            <div className="flex flex-col w-full items-center mb-25">
+                <span className="font-nunito text-[16px] text-secondary font-medium dark:text-accent">
+                    Dark mode
+                </span>
+                <ToggleSwitch />
+            </div>
 
             {confirmDelete && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
