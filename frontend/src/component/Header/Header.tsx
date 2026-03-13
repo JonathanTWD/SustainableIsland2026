@@ -29,7 +29,7 @@ export function Header({ onMenuClick, isMenuOpen, title }: HeaderProps) {
     }
     else if (location.pathname === '/profile') {
         return (
-            <header className="w-full inline-flex justify-between items-start text-accent">
+            <header className="w-full inline-flex justify-between items-start text-secondary dark:text-accent">
                 <div className="w-28 inline-flex flex-col justify-start items-start gap-2">
                     <h1 className="justify-start text-3xl font-bold font-['Kalam']">Profile</h1>
                     <h3 className="text-xl font-['Nunito']">Statistics</h3>
